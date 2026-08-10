@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yunat Dengo · 12 de Setembro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Música de fundo -->
+<audio id="bgMusic" src="Musica/Katy Perry - Birthday.mpeg" loop preload="none"></audio>
+
+<!-- Ecrã de boas-vindas -->
+<div class="enter-screen" id="enterScreen">
+  <div class="enter-content">
+    <span class="enter-heart">&#10084;</span>
+    <p class="enter-eyebrow">CONVITE</p>
+    <h1 class="enter-title">Yunat Dengo</h1>
+    <button class="enter-btn" id="enterBtn">Abrir Convite</button>
+  </div>
+</div>
+
+<!-- Player de música flutuante -->
+<button class="music-player" id="musicPlayer" aria-label="Tocar ou pausar música">
+  <span class="music-icon">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </span>
+  <span class="music-label">Katy Perry &middot; Birthday</span>
+</button>
+
+<!-- Navegação lateral por pontos -->
+<nav class="dot-nav" id="dotNav" aria-label="Navegação das secções">
+  <a href="#capa" data-label="Capa"></a>
+  <a href="#convite" data-label="Convite"></a>
+  <a href="#cerimonia" data-label="Recepção"></a>
+  <a href="#versiculo" data-label="Dress Code"></a>
+  <a href="#contagem" data-label="Contagem"></a>
+  <a href="#confirmar" data-label="Confirmar"></a>
+  <a href="#rsvp" data-label="Formulário"></a>
+  <a href="#mensagens" data-label="Mensagens"></a>
+</nav>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<main>
+
+  <!-- 1. CAPA -->
+  <section id="capa" class="section hero">
+    <div class="leaves" aria-hidden="true">
+      <span class="leaf l1"></span><span class="leaf l2"></span><span class="leaf l3"></span>
+      <span class="leaf l4"></span><span class="leaf l5"></span><span class="leaf l6"></span>
+    </div>
+    <div class="hero-content reveal">
+      <p class="eyebrow">Festa de aniversario de </p>
+      <h1 class="hero-names">
+        <span class="name">Yunat Dengo</span>
+      </h1>
+      <p class="hero-date">12 de Setembro de 2026</p>
+      <a href="#convite" class="scroll-hint">Deslize para ver mais <span class="arrow">&#8595;</span></a>
+    </div>
+  </section>
+   <!-- 5. VERSÍCULO -->
+ 
+  <!-- 2. CONVITE ESPECIAL + A NOIVA -->
+  <section id="convite" class="section">
+    <div class="section-inner reveal">
+      <span class="icon-circle">&#10084;</span>
+      <h2 class="script-title">Convite Especial</h2>
+      <p class="lede">17 anos de sonhos, sorrisos e momentos inesquecíveis!</br>
+
+Chegar aos 17 é celebrar tudo o que já vivi e, ao mesmo tempo, abrir as portas para novos sonhos, novas conquistas e novas aventuras.</br>
+
+Com muita alegria no coração, <span style="font-weight: bold;">Yunat Dengo</span> convida você para fazer parte de um dia muito especial, preparada com carinho para celebrar mais um capítulo da sua história.</br>
+
+🌸 17 anos de vida, luz e sonhos.</br>
+E nada tornaria este momento mais especial do que ter você ao meu lado para comemorar.</br>
+
+Venha celebrar comigo!</br>
+Sua presença será o presente mais bonito deste dia. 💕</p>
+  <!-- 4. CERIMÔNIA + COPO DE ÁGUA -->
+  <section id="cerimonia" class="section">
+    <div class="section-inner reveal">
+      <span class="icon-circle">&#127796;</span>
+      <h2 class="script-title">Local do evento</h2>
+
+        <div class="event-card">
+          <span class="event-icon"></span>
+          <h3>Recepção</h3>
+          <p>Celebração com família e amigos</p>
+          <p class="event-meta"><span class="dot-ico">&#9201;</span> 15h00 (chegue as 14:30 para tudo estar pronto para a festa perfeita)</p>
+          <p class="event-meta"><span class="dot-ico">&#128205;</span>Gloria Hotel, Sala 2, 1o Andar, Cidade de Maputo</p>
+          <a href="https://www.google.com/maps/place/Maputo+Afecc+Gloria+Hotel,+AV+DA+MARGINAL+N+4441%EF%BC%9B,+MAPUTO+AV+DA+MARGINAL+4441/@-25.955012,32.609184,17z/data=!4m6!3m5!1s0x1ee69bcb3c80d873:0x217ed81c4a24818e!8m2!3d-25.955012!4d32.609184!16s%2Fg%2F11c45txn4_?utm_campaign=ml-le-gt6&g_ep=Eg1tbF8yMDI2MDgwNF8wIOC7DCoASAJQAg%3D%3D" class="ghost-btn">Ver Localização &#8599;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+   <section id="versiculo" class="section alt">
+    <div class="section-inner reveal narrow">
+      <span class="icon-circle" style="font-weight: bold; font-size: 14pt;">Dress Code</span>
+      <span class="heart-sep">&#10084;</span>
+      <p class="verse"> <span style="font-weight: bold;">🤍Dress Code: Total White</span><br>
+
+Para tornar esta celebração ainda mais especial, pedimos que todos os convidados vistam branco dos pés à cabeça.
+Branco na parte de cima e na parte de baixo, tendo o branco como única cor do vestuário.
+
+Vista-se de branco e venha fazer parte desta noite inesquecível! 🤍</p>
+    </div>
+  </section>
+        <section id="historia">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-visual reveal-left">
+         <p class="countdown-label">A nossa aniversariante</p>
+        <div class="story-frame">
+          <!-- Couple illustration in SVG -->
+         <img src="Imagem/WhatsApp Image 2026-08-10 at 11.13.53 AM (1).jpeg" class="story-img">
+            <!-- Couple silhouette simplified -->   
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. CONTAGEM REGRESSIVA -->
+  <section id="contagem" class="section">
+    <div class="section-inner reveal">
+      <span class="icon-circle">&#128337;</span>
+      <h2 class="script-title">Contagem Regressiva</h2>
+      <p class="lede">Faltam poucos dias para o grande dia</p>
+
+      <div class="countdown" id="countdown">
+        <div class="count-box"><span class="count-num" id="cd-days">00</span><span class="count-label">Dias</span></div>
+        <div class="count-box"><span class="count-num" id="cd-hours">00</span><span class="count-label">Horas</span></div>
+        <div class="count-box"><span class="count-num" id="cd-mins">00</span><span class="count-label">Minutos</span></div>
+        <div class="count-box"><span class="count-num" id="cd-secs">00</span><span class="count-label">Segundos</span></div>
+      </div>
+      <p class="celebrated-msg" id="celebratedMsg" hidden>Já celebramos este dia maravilhoso! &#127881;</p>
+    </div>
+  </section>
+
+  <!-- 7. CONFIRME SUA PRESENÇA (intro) -->
+  <section id="confirmar" class="section alt">
+    <div class="section-inner reveal narrow">
+      <span class="icon-circle">&#128198;</span>
+      <h2 class="script-title">Confirme sua Presença</h2>
+      <p class="lede">Sua presença é o melhor presente que podemos receber</p>
+      <div class="deadline-pill">Confirme sua presença</div>
+      <a href="#rsvp" class="ghost-btn solid">Confirmar agora</a>
+    </div>
+  </section>
+
+  <!-- 8. FORMULÁRIO RSVP -->
+  <section id="rsvp" class="section">
+    <div class="section-inner reveal narrow">
+      <form id="rsvpForm" class="rsvp-form" novalidate>
+        <label class="field">
+          <span class="field-label">&#128100; Nome Completo *</span>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+        </label>
+
+        <label class="field">
+          <span class="field-label">&#128222; Telefone *</span>
+          <input type="tel" id="telefone" name="telefone" placeholder="+258 83 4966 519" required>
+        </label>
+
+        <fieldset class="field">
+          <legend class="field-label">&#10084; Confirma presença? *</legend>
+          <label class="radio-option">
+            <input type="radio" name="presenca" value="sim" checked>
+            <span>Sim, estarei presente</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="presenca" value="nao">
+            <span>Infelizmente não poderei comparecer</span>
+          </label>
+        </fieldset>
+
+        <label class="field">
+          <span class="field-label">&#128172; Mensagem para a aniversariante (opcional)</span>
+          <textarea id="mensagemRsvp" name="mensagemRsvp" rows="4" placeholder="Deixe uma mensagem especial para a aniversariante..."></textarea>
+        </label>
+
+        <button type="submit" class="submit-btn">
+          <span class="send-icon">&#10148;</span> Confirmar Presença
+        </button>
+      </form>
+
+      <div class="rsvp-success" id="rsvpSuccess" hidden>
+        <span class="icon-circle">&#10004;</span>
+        <h3>Obrigado, <span id="successName">convidado</span>!</h3>
+        <p>A tua confirmação foi registada com carinho. Mal podemos esperar para celebrar contigo.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. MENSAGENS E CONVIDADOS -->
+  <section id="mensagens" class="section alt last">
+    <div class="section-inner reveal narrow">
+      <span class="icon-circle">&#10084;</span>
+      <p class="verse small">"Cada segundo que passa nos aproxima desse dia especial"</p>
+      <p class="script-sign">Yunat Dengo</p>
+
+      <div class="sep-dot"><span></span><i></i><span></span></div>
+
+      <span class="icon-circle">&#128172;</span>
+      <h2 class="script-title">Mensagens dos Convidados</h2>
+
+      <div class="messages-wall" id="messagesWall"></div>
+
+      <form id="messageForm" class="message-form">
+        <textarea id="novaMensagem" rows="3" placeholder="Deixe uma mensagem de carinho para a aniversariante..." required></textarea>
+        <input type="text" id="autorMensagem" placeholder="O teu nome" required>
+        <button type="submit" class="submit-btn small">Enviar Mensagem</button>
+      </form>
+
+      <p class="final-thanks">Yunat Dengo &#10084;</p>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>
