@@ -2,29 +2,39 @@
    ALIA & FERNANDO — CONVITE DIGITAL
    Paleta: verde muito claro + tons complementares
 ============================================ */
+:root {
+    /* =========================================================
+       VINHO PROFUNDO — base do site
+       ========================================================= */
 
- :root {
-    /* Rosa — base do site */
-    --bg:            #FDF5F6;   /* rosa muito claro, quase branco */
-    --bg-alt:        #F8E8EB;   /* rosa blush suave */
-    --panel:         #FFFFFF;   /* branco para painéis */
+    --bg:            rgb(60, 0, 7);      /* vinho muito escuro — fundo principal */
+    --bg-alt:        rgb(78, 8, 18);     /* vinho um pouco mais claro */
+    --panel:         rgb(92, 20, 31);    /* bordô para painéis */
 
-    --sage:          #D8A0AA;   /* rosa antigo — accent principal */
-    --sage-dark:     #A85D6B;   /* rosa escuro para títulos/botões */
-    --forest:        #6E2638;   /* vinho suave para texto forte */
-    --text:          #654A51;   /* rosa acinzentado para texto */
-    --text-soft:     #9A777F;   /* rosa suave para textos secundários */
+    --sage:          rgb(190, 111, 125); /* rosa queimado — accent principal */
+    --sage-dark:     rgb(157, 67, 82);   /* bordô rosado — títulos e botões */
+    --forest:        rgb(240, 218, 207); /* creme rosado — texto forte */
+    --text:          rgb(225, 198, 193); /* rosa creme — texto principal */
+    --text-soft:     rgb(181, 143, 149); /* rosa acinzentado — textos secundários */
 
-    --gold:          #C6A96B;   /* dourado suave para detalhes */
+    --gold:          rgb(207, 174, 104); /* dourado elegante — detalhes */
 
-    --line:          rgba(168, 93, 107, 0.22);
+    --line:          rgba(207, 174, 104, 0.25);
 
-    --shadow-soft:   0 24px 60px -30px rgba(110, 38, 56, 0.25);
-    --shadow-card:   0 10px 34px -12px rgba(110, 38, 56, 0.16);
+    --shadow-soft:
+        0 24px 60px -30px rgba(0, 0, 0, 0.55);
 
-    --font-display:  'Cormorant Garamond', serif;
-    --font-body:     'Jost', sans-serif;
+    --shadow-card:
+        0 10px 34px -12px rgba(0, 0, 0, 0.45);
+
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body:    'Jost', sans-serif;
 }
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -44,18 +54,46 @@ body {
     overflow-x: hidden;
 }
 
-img{ max-width:100%; display:block; }
+img {
+    max-width: 100%;
+    display: block;
+}
 
-/* ---------- Ecrã de entrada ---------- */
-.enter-screen{
-  position:fixed; inset:0;
-  z-index:100;
-  display:flex; align-items:center; justify-content:center;
-  background:
-    radial-gradient(700px 500px at 20% 10%, rgba(143,174,130,0.18), transparent 60%),
-    radial-gradient(700px 500px at 85% 90%, rgba(198,178,123,0.12), transparent 60%),
-    var(--bg);
-  transition:opacity .8s ease, visibility .8s ease;
+
+/* =========================================================
+   ECRÃ DE ENTRADA
+   ========================================================= */
+
+.enter-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            700px 500px at 20% 10%,
+            rgba(190, 111, 125, 0.18),
+            transparent 60%
+        ),
+        radial-gradient(
+            700px 500px at 85% 90%,
+            rgba(207, 174, 104, 0.13),
+            transparent 60%
+        ),
+        radial-gradient(
+            500px 400px at 50% 50%,
+            rgba(157, 67, 82, 0.10),
+            transparent 65%
+        ),
+        var(--bg);
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
 }
 .enter-screen.hidden{ opacity:0; visibility:hidden; pointer-events:none; }
 
@@ -78,7 +116,7 @@ img{ max-width:100%; display:block; }
   box-shadow:var(--shadow-soft);
   transition:transform .3s ease, background .3s ease;
 }
-.enter-btn:hover{ transform:translateY(-2px); background:var(--forest); }
+.enter-btn:hover{ transform:translateY(-2px); background:var(--forest); color: palevioletred;}
 
 /* ---------- Player de música ---------- */
 .music-player{
@@ -307,9 +345,9 @@ img{ max-width:100%; display:block; }
   border-radius:999px;
   transition:all .25s ease;
 }
-.ghost-btn:hover{ background:var(--sage-dark); color:#fff; border-color:var(--sage-dark); }
+.ghost-btn:hover{ background:var(--sage-dark); color:#fff; border-color:var(--sage-dark);}
 .ghost-btn.solid{ background:var(--sage-dark); color:#fff; }
-.ghost-btn.solid:hover{ background:var(--forest); }
+.ghost-btn.solid:hover{ background:var(--forest); color: palevioletred;}
 
 /* ---------- Versículo ---------- */
 .heart-sep{ display:block; color:var(--gold); font-size:14px; margin-bottom:26px; }
@@ -410,7 +448,7 @@ fieldset legend{ padding:0; }
   box-shadow:var(--shadow-card);
   transition:background .25s ease, transform .2s ease;
 }
-.submit-btn:hover{ background:var(--forest); transform:translateY(-2px); }
+.submit-btn:hover{ background:var(--forest); transform:translateY(-2px); color: palevioletred; }
 .submit-btn.small{ margin-top:4px; }
 
 .rsvp-success{ animation:floatIn .6s ease both; }
