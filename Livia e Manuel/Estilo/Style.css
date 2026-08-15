@@ -462,7 +462,16 @@
     border-radius:30px;
     z-index:50;
     box-shadow:0 10px 26px -12px rgba(0,0,0,.4);
+
+    opacity:1;
+  pointer-events:auto;
+  transition:opacity .4s ease, transform .4s ease;
   }
+  #bottomNav.hidden{
+  opacity:0;
+  transform:translateX(-50%) translateY(20px);
+  pointer-events:none;
+}
   #bottomNav a{
     width:36px;
     height:36px;

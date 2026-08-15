@@ -117,12 +117,23 @@
   const navSections = Object.values(navTargets).map(id => document.getElementById(id)).filter(Boolean);
 
   const navIo = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        navLinks.forEach(link => link.classList.remove('active'));
-        const match = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-        if (match) match.classList.add('active');
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => link.classList.remove('active'));
+      const match = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+      if (match) match.classList.add('active');
+
+      // Esconde o menu inferior enquanto estiver na capa
+      const bottomNav = document.getElementById('bottomNav');
+      if (entry.target.id === 'cover') {
+        bottomNav.classList.add('hidden');
+      } else {
+        bottomNav.classList.remove('hidden');
       }
-    });
-  }, { threshold: 0.6 });
-  navSections.forEach(sec => navIo.observe(sec));
+    }
+  });
+}, { threshold: 0.6 });
+navSections.forEach(sec => navIo.observe(sec));
+
+// Garante que o menu já começa escondido, já que a página abre na capa
+document.getElementById('bottomNav').classList.add('hidden');
