@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>O Casamento de Lívia & Manuel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Alex+Brush&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Estilo/Style.css">
+</head>
+<body>
+
+<!-- ===================== MUSIC ===================== -->
+<!-- Substitua "musica.mp3" pelo ficheiro de música que vai colocar -->
+<audio id="bgMusic" src="Musica/Bruno Mars - Risk it all.mp3.mpeg" loop preload="auto"></audio>
+
+<button id="musicToggle" aria-label="Ligar/desligar música">
+  <svg viewBox="0 0 24 24"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+</button>
+
+<div class="story" id="story">
+
+  <!-- ===================== COVER ===================== -->
+  <section id="cover">
+    <div>
+      <div class="eyebrow">O Casamento de</div>
+      <h1 class="script-names">Lívia &amp; Manuel</h1>
+      <button id="enterBtn">CLIQUE PARA ABRIR</button>
+    </div>
+    <div class="scroll-hint"></div>
+  </section>
+
+   <!-- ===================== VERSÍCULO ===================== -->
+  <section id="verse">
+    <div class="reveal">
+      <div class="rings">💍</div>
+      <div class="script-title">Lei Divina...</div>
+      <p>“O amor é paciente, o amor é bondoso. Não inveja, não se vangloria, não se orgulha. Não maltrata, não procura os seus interesses, não se irrita facilmente, não guarda rancor. O amor não se alegra com a injustiça, mas alegra-se com a verdade. Tudo sofre, tudo crê, tudo espera, tudo suporta. O amor nunca perece.”</p>
+      <div class="ref">Coríntios 13:4-8</div>
+    </div>
+  </section>
+
+  <!-- ===================== OS NOIVOS ===================== -->
+  <section id="noivos">
+    <div class="reveal">
+      <div class="eyebrow-gold">Os Noivos</div>
+      <div class="photo-oval">
+        <img src="Imagens/1b.jpeg" alt="Lívia e Manuel">
+      </div>
+      <div class="name-tag">
+        <div class="script">Lívia &amp; Manuel</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PAIS ===================== -->
+  <section id="pais">
+    <div class="reveal">
+      <div class="couple-name">Lívia Mahilene</div>
+      <p class="parents">Filha de<br>Humberto De Jesus( em memória )<br>e<br>Elvira Guimarães </p>
+
+      <svg class="heart" viewBox="0 0 32 29" fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M16 27C6 20 2 14.5 2 9.5 2 5 5.2 2 9 2c2.6 0 4.7 1.4 7 4.3C18.3 3.4 20.4 2 23 2c3.8 0 7 3 7 7.5 0 5-4 10.5-14 17.5z"/>
+      </svg>
+
+      <div class="couple-name">Manuel Manga</div>
+      <p class="parents">Filho de<br>Simone Manuel<br>e<br>Regina Vilanculos</p>
+    </div>
+  </section>
+
+ 
+  <!-- ===================== CONVITE ===================== -->
+  <section id="invite">
+    <div class="reveal">
+      <h2>Com a bênção<br>de Deus,</h2>
+      <p>
+        Temos a honra de convidá-lo(a) a comemorar esta data especial connosco.
+        Venha juntar-se a nós e ajudar-nos a celebrar o nosso enlace matrimonial,
+        de acordo com a agenda abaixo.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== AGENDA ===================== -->
+  <section id="agenda">
+    <div class="reveal agenda-card">
+      <div class="cal-icon">🗓️</div>
+      <h3>Agenda</h3>
+      <div class="agenda-date">Sábado, 17 de Outrubro, 2026</div>
+      <div class="diamond">◆</div>
+
+      <div class="agenda-row">
+        <div class="label">Cerimónia Civil</div>
+        <div class="time">15H30</div>
+        <div class="venue">Paróquia sagrado coração de Jesus-Macuti</div>
+        <a class="map-btn" href="https://www.google.com/maps/place/5V5J%2BW5M+Par%C3%B3quia+do+sagrado+cora%C3%A7%C3%A3o+de+Jesus+-+Capela+S%C3%A3o+Kezito,+Beira/@-19.8391124,34.8820283,17z/data=!4m6!3m5!1s0x1f2a41006b2e3235:0x53256cfd5ec66fed!8m2!3d-19.8400106!4d34.8807838!16s%2Fg%2F11zdc5lprf?utm_campaign=ml-le-gt6&g_ep=Eg1tbF8yMDI2MDgwOV8wIOC7DCoASAJQAg%3D%3D" target="_blank">📍 Mapa</a>
+      </div>
+
+      <div class="agenda-row">
+        <div class="label">Cerimónia Religiosa</div>
+        <div class="time">16H30</div>
+        <div class="venue">Cerimônia Civil 16:30 na infraestruturas Verdes 1( Em frente a casa dos bicos)</div>
+        <a class="map-btn" href="https://www.google.com/maps/place/Parque+de+Infra-Estruturas+Verdes+da+Beira,+Casa+dos+Bicos,+Rua+Pedro+Alves+Cabral+-+Bairro+Chaimite+-+Oposto+%C3%A0,+Beira/@-19.8348407,34.8400821,17z/data=!4m6!3m5!1s0x1f2a6b7bc1c7774b:0x23cdf459a247f0a5!8m2!3d-19.8348407!4d34.8400821!16s%2Fg%2F11s35p6060?utm_campaign=ml-le-gt6&g_ep=Eg1tbF8yMDI2MDgwOV8wIOC7DCoASAJQAg%3D%3D" target="_blank">📍 Mapa</a>
+      </div>
+
+      <div class="agenda-row">
+        <div class="arrow-divider">➚</div>
+        <div class="label">Copo D'Água</div>
+        <div class="time">19H00</div>
+        <div class="venue">Salão da bomba total dos Pioneiros, salão 2</div>
+        <div class="addr">Quadra C50, Rua General Vieira da Rocha, Pioneiros</div>
+        <a class="map-btn" href="https://share.google/dsDSN2SVkFPo2C1kv" target="_blank">📍 Mapa</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AMIGOS E FAMÍLIA ===================== -->
+  <section id="amigos">
+    <div class="reveal">
+      <div class="script">Amigos e Família</div>
+      <p>
+        Se recebeu este convite significa que é nosso convidado de honra
+        e a sua presença é importante para nós. Por favor confirme a sua
+        presença para melhor nos organizarmos.
+      </p>
+      <div class="arch-photo">
+        <img src="Imagens/WhatsApp Image 2026-08-15 at 9.32.40 AM (1).jpeg" alt="Lívia e Manuel">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTAGEM + RSVP ===================== -->
+  <section id="contagem">
+    <div class="reveal">
+      <div class="timer" id="timer">
+        <div class="script">Contagem regressiva</div>
+        <div class="box"><div class="num" id="cd-dias">00</div><div class="lbl">Dias</div></div>
+        <div class="box"><div class="num" id="cd-horas">00</div><div class="lbl">Horas</div></div>
+        <div class="box"><div class="num" id="cd-min">00</div><div class="lbl">Minutos</div></div>
+        <div class="box"><div class="num" id="cd-seg">00</div><div class="lbl">Segundos</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RSVP ===================== -->
+  <section id="rsvp">
+    <div class="reveal">
+      <div class="script-title">R.S.V.P.</div>
+      <form id="rsvpForm">
+        <div class="form-field">
+          <label for="nome">Nome e Apelido *</label>
+          <input type="text" id="nome" name="nome" placeholder="Ex.: António João" required>
+        </div>
+        <div class="form-field">
+          <label for="celular">Celular *</label>
+          <input type="tel" id="celular" name="celular" placeholder="Ex.: +258 834966519" required>
+        </div>
+        <div class="form-field">
+          <label for="presenca">Estará presente? *</label>
+          <select id="presenca" name="presenca" required>
+            <option value="sim">Sim, estarei. (Yes, I'll be there)</option>
+            <option value="nao">Não poderei ir. (No, I can't make it)</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="mensagem">Por favor, escreva aqui as suas felicitações pela nossa união.</label>
+          <textarea id="mensagem" name="mensagem"></textarea>
+        </div>
+        <button type="submit" id="submitBtn">Submeter</button>
+        <div class="rsvp-msg" id="rsvpMsg">Obrigado! A sua confirmação foi recebida. 💛</div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===================== PRESENTE ===================== -->
+  
+
+  <!-- ===================== VERSÍCULO 2 ===================== -->
+  <section id="verse2">
+    <div class="reveal">
+      <div class="script-title">Mais Um Passo<br>Na Nossa Jornada</div>
+      <p>"Assim, eles já não são dois, mas sim uma só carne. Portanto, o que Deus uniu, ninguém separe."</p>
+      <div class="ref">Mateus 19:6</div>
+    </div>
+  </section>
+
+  <!-- ===================== GALERIA ===================== -->
+  <section id="galeria">
+    <div class="reveal">
+      <div class="eyebrow-gold">Galeria</div>
+      <div class="gallery-grid">
+        <img src="Imagens/5b.jpeg" alt="">
+        <img src="Imagens/1b.jpeg" alt="">
+        <img class="tall" src="Imagens/2b.jpeg" alt="">
+        <img src="Imagens/3.jpeg" alt="">
+        <img src="Imagens/4.jpeg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ENCERRAMENTO ===================== -->
+  <section id="closing">
+    <div class="reveal">
+      <p>Estamos ansiosos para recebê-lo(a) no dia do nosso casamento!</p>
+    </div>
+  </section>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <section id="footer">
+    <div class="reveal">
+      <div class="script">Lílvia &amp; Manuel</div>
+      <p>A vossa presença é o maior presente que podemos receber.<br>Contamos convosco para celebrar este dia único.</p>
+      <div class="small">17 · 10 · 2026</div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===================== NAV INFERIOR ===================== -->
+<nav id="bottomNav">
+  <a href="#cover" class="nav-link active" aria-label="Início">
+    <svg viewBox="0 0 24 24"><path d="M12 2 2 9v13h7v-7h6v7h7V9z"/></svg>
+  </a>
+  <a href="#noivos" class="nav-link" aria-label="Os Noivos">
+    <svg viewBox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-2.3 0-7 1.2-7 3.5V19h9v-2.5c0-.9.3-1.7.8-2.4C9.7 13.4 8.6 13 8 13zm8 0c-.6 0-1.7.4-2.8 1.1.5.7.8 1.5.8 2.4V19h7v-2.5c0-2.3-4.7-3.5-5-3.5z"/></svg>
+  </a>
+  <a href="#agenda" class="nav-link" aria-label="Agenda">
+    <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V10h14z"/></svg>
+  </a>
+   <a href="#rsvp" class="nav-link" aria-label="RSVP">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+  </a>
+  
+  <a href="#galeria" class="nav-link" aria-label="Galeria">
+    <svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5z"/></svg>
+  </a>
+ 
+</nav>
+
+<script src="Javascript/Script.js"></script>
+
+</body>
+</html>
