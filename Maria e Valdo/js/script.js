@@ -139,6 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
 
     const nome = document.getElementById('nome').value.trim();
+    const acompanhante = document.getElementById('acompanhante').value.trim();
     const telefone = document.getElementById('telefone').value.trim();
     const presenca = document.querySelector('input[name="presenca"]:checked').value;
     const mensagem = document.getElementById('mensagemRsvp').value.trim();
@@ -153,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let texto = `*Confirmação de Presença — Casamento Maria & Valdo*\n\n`;
     texto += `*Nome:* ${nome}\n`;
+     texto += `*Acompanhante:* ${acompanhante}\n`;
     texto += `*Telefone:* ${telefone}\n`;
     texto += `*Presença:* ${presencaTexto}\n`;
     if (mensagem){
