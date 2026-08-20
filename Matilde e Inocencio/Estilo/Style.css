@@ -489,3 +489,157 @@
   @media (min-width:640px){
     section{ padding:80px 40px; }
   }
+
+  /* ---------- MENSAGENS DOS CONVIDADOS ---------- */
+#mensagens.alt{ background:var(--cream-deep, #F3ECDC); }
+
+#mensagens .icon-circle{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  background:#fff;
+  color:var(--gold, #B8894A);
+  font-size:18px;
+  box-shadow:0 10px 22px -14px rgba(60,45,20,.35);
+  margin-bottom:14px;
+}
+
+#mensagens .verse.small{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:16px;
+  color:var(--ink, #3A3229);
+  max-width:340px;
+  margin:0 auto 8px;
+  line-height:1.7;
+}
+
+#mensagens .script-sign{
+  font-family:'Alex Brush', cursive;
+  font-size:24px;
+  color:var(--gold, #B8894A);
+}
+
+#mensagens .sep-dot{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin:26px 0;
+}
+#mensagens .sep-dot span{
+  width:30px;
+  height:1px;
+  background:var(--gold-line, #C9A25C);
+  display:inline-block;
+}
+#mensagens .sep-dot i{
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--gold, #B8894A);
+  display:inline-block;
+}
+
+#mensagens .script-title{
+  font-family:'Alex Brush', cursive;
+  font-size:32px;
+  color:var(--gold, #B8894A);
+  margin-bottom:26px;
+}
+
+/* Mural de mensagens */
+.messages-wall{
+  width:100%;
+  max-width:420px;
+  max-height:340px;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin:0 auto 30px;
+  padding-right:4px;
+}
+.messages-wall::-webkit-scrollbar{ width:5px; }
+.messages-wall::-webkit-scrollbar-thumb{ background:var(--gold-line, #C9A25C); border-radius:10px; }
+
+.messages-wall .msg-card{
+  background:#fff;
+  border:1px solid #EFE6D4;
+  border-radius:14px;
+  padding:16px 18px;
+  text-align:left;
+  box-shadow:0 10px 24px -18px rgba(60,45,20,.3);
+  animation:msgIn .5s ease;
+}
+@keyframes msgIn{
+  from{ opacity:0; transform:translateY(10px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+.messages-wall .msg-card p{
+  font-family:'Cormorant Garamond', serif;
+  font-size:16px;
+  color:var(--ink, #3A3229);
+  line-height:1.6;
+  margin-bottom:8px;
+}
+.messages-wall .msg-card .msg-author{
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  color:var(--gold, #B8894A);
+}
+.messages-wall .msg-empty{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:15px;
+  color:var(--ink-soft, #8A7F6E);
+  padding:20px 0;
+}
+
+/* Formulário */
+.message-form{
+  width:100%;
+  max-width:380px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.message-form textarea,
+.message-form input{
+  width:100%;
+  border:1px solid var(--gold-line, #C9A25C);
+  border-radius:10px;
+  padding:12px 14px;
+  font-family:'Poppins', sans-serif;
+  font-size:14px;
+  font-weight:300;
+  color:var(--ink, #3A3229);
+  background:#fff;
+  resize:vertical;
+}
+.submit-btn.small{
+  background:#9C9284;
+  color:#fff;
+  border:none;
+  padding:13px;
+  border-radius:10px;
+  font-family:'Poppins', sans-serif;
+  font-size:13px;
+  letter-spacing:.5px;
+  cursor:pointer;
+  transition:.3s;
+}
+.submit-btn.small:hover{ background:#847A6C; }
+
+#mensagens .final-thanks{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:16px;
+  color:var(--gold, #B8894A);
+  margin-top:34px;
+}

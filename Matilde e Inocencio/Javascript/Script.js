@@ -137,3 +137,52 @@ navSections.forEach(sec => navIo.observe(sec));
 
 // Garante que o menu já começa escondido, já que a página abre na capa
 document.getElementById('bottomNav').classList.add('hidden');
+
+
+
+// ---------- Mural de Mensagens → Google Sheets ----------
+
+// Cole aqui o URL do Apps Script que você copiou no passo 2
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxcedEfE77xoRRIr8VFEI69PT444mKziBc7hPg4ElVwFOSr2E1T2fvDubKyfXmjXCPoww/exec';
+
+function renderMessage(msg){
+  const card = document.createElement('div');
+  card.className = 'msg-card';
+  card.innerHTML = `<p>"${msg.texto}"</p><span class="msg-author">&mdash; ${msg.autor}</span>`;
+  messagesWall.appendChild(card);
+}
+
+// Carrega as mensagens da Sheet quando a página abre
+function carregarMensagens(){
+  fetch(GOOGLE_SCRIPT_URL)
+    .then(res => res.json())
+    .then(mensagens => {
+      messagesWall.innerHTML = ''; // limpa antes de redesenhar
+      mensagens.forEach(renderMessage);
+      messagesWall.scrollTop = messagesWall.scrollHeight;
+    })
+    .catch(err => console.error('Erro ao carregar mensagens:', err));
+}
+
+carregarMensagens();
+
+messageForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const texto = document.getElementById('novaMensagem').value.trim();
+  const autor = document.getElementById('autorMensagem').value.trim();
+  if (!texto || !autor) return;
+
+  const novaMsg = { autor, texto };
+
+  // Mostra logo no ecrã, sem esperar pela resposta do servidor
+  renderMessage(novaMsg);
+  messagesWall.scrollTop = messagesWall.scrollHeight;
+
+  // Envia para a Google Sheet
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    body: JSON.stringify(novaMsg)
+  }).catch(err => console.error('Erro ao guardar:', err));
+
+  messageForm.reset();
+});
