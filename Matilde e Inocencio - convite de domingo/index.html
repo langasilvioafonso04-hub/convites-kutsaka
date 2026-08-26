@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matilde & Inocêncio· 15 de Novembro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Música de fundo -->
+<audio id="bgMusic" src="Musica/Pérola_-_Tudo_para_Mim(256k).mp3.mpeg" loop preload="none"></audio>
+
+<!-- Ecrã de boas-vindas -->
+<div class="enter-screen" id="enterScreen">
+  <div class="enter-content">
+    <span class="enter-heart">&#10084;</span>
+    <p class="enter-eyebrow">CONVITE DE CASAMENTO</p>
+    <h1 class="enter-title">Matilde <span>&amp;</span> Inocêncio</h1>
+    <button class="enter-btn" id="enterBtn">Abrir Convite</button>
+  </div>
+</div>
+
+<!-- Player de música flutuante -->
+<button class="music-player" id="musicPlayer" aria-label="Tocar ou pausar música">
+  <span class="music-icon">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </span>
+  <span class="music-label">Pérola &middot; Tudo para mim</span>
+</button>
+
+<!-- Navegação lateral por pontos -->
+<nav class="dot-nav" id="dotNav" aria-label="Navegação das secções">
+  <a href="#capa" data-label="Capa"></a>
+  <a href="#convite" data-label="Convite"></a>
+  <a href="#noivo" data-label="Noivo"></a>
+  <a href="#cerimonia" data-label="Cerimônia"></a>
+  <a href="#versiculo" data-label="Versículo"></a>
+  <a href="#contagem" data-label="Contagem"></a>
+  <a href="#confirmar" data-label="Confirmar"></a>
+  <a href="#rsvp" data-label="Formulário"></a>
+  <a href="#mensagens" data-label="Mensagens"></a>
+</nav>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<main>
+
+  <!-- 1. CAPA -->
+  <section id="capa" class="section hero">
+    <div class="leaves" aria-hidden="true">
+      <span class="leaf l1"></span><span class="leaf l2"></span><span class="leaf l3"></span>
+      <span class="leaf l4"></span><span class="leaf l5"></span><span class="leaf l6"></span>
+    </div>
+    <div class="hero-content reveal">
+      <p class="eyebrow">Celebrando o amor de</p>
+      <h1 class="hero-names">
+        <span class="name">Matilde</span>
+        <span class="hero-heart">&#10084;</span>
+        <span class="name">Valdo</span>
+      </h1>
+      <p class="hero-date">15 de Novembro de 2026</p>
+      <a href="#versiculo" class="scroll-hint">Deslize para ver mais <span class="arrow">&#8595;</span></a>
+    </div>
+  </section>
+   <!-- 5. VERSÍCULO -->
+  <section id="versiculo" class="section alt">
+    <div class="section-inner reveal narrow">
+      <span class="icon-circle">&#128214;</span>
+      <span class="heart-sep">&#10084;</span>
+      <p class="verse">“O amor é paciente, o amor é bondoso. Não inveja, não se vangloria, não se orgulha. Não maltrata, não procura os seus interesses, não se irrita facilmente, não guarda rancor. O amor não se alegra com a injustiça, mas alegra-se com a verdade. Tudo sofre, tudo crê, tudo espera, tudo suporta. O amor nunca perece.”</p>
+      <p class="verse-ref">Romanos 13:4&ndash;8</p>
+    </div>
+  </section>
+
+  <!-- 2. CONVITE ESPECIAL + A NOIVA -->
+  <section id="convite" class="section">
+    <div class="section-inner reveal">
+      <span class="icon-circle">&#10084;</span>
+      <h2 class="script-title">Convite Especial</h2>
+      <p class="lede">Com a bênção de Deus e de nossos pais, temos a honra de convidá-lo(a) para celebrar a nossa união.</p>
+
+      <div class="person-card">
+        <span class="eyebrow small">A Noiva</span>
+        <h3 class="person-name">Matilde Carlos Cossa</h3>
+        <div class="hr"></div>
+        <span class="eyebrow small">Filha de</span>
+        <p class="parents">Carlos Américo Cossa <span class="amp">&amp;</span> ⁠Isabel António Cossa</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. O NOIVO + DATA -->
+  <section id="noivo" class="section alt">
+    <div class="section-inner reveal">
+      <div class="person-card">
+        <span class="eyebrow small">O Noivo</span>
+        <h3 class="person-name">Inocêncio Rafael Manjate</h3>
+        <div class="hr"></div>
+        <span class="eyebrow small">Filho de</span>
+        <p class="parents">Rafael Massassane Manjate (em memória) <span class="amp">&amp;</span> Alice Manavanhana Melembe(em memória)</p>
+      </div>
+
+      <div class="container">
+    <div class="story-grid">
+      <div class="story-visual reveal-left">
+         <p class="countdown-label">Os Noivos</p>
+        <div class="story-frame">
+          <!-- Couple illustration in SVG -->
+         <img src="Imagem/2.jpeg" class="story-img">
+            <!-- Couple silhouette simplified -->   
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+      <span class="icon-circle rings">&#128141;</span>
+
+      <div class="date-card">
+        <span class="eyebrow small">Data do Casamento</span>
+        <p class="date-big">15 de Novembro <span>de 2026</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CERIMÔNIA + COPO DE ÁGUA -->
+
+        <div class="event-card">
+          <span class="event-icon"></span>
+          <h3>Copo de Água</h3>
+          <p>Celebração com família e amigos</p>
+          <p class="event-meta"><span class="dot-ico">&#9201;</span> 14h00</p>
+          <p class="event-meta"><span class="dot-ico">&#128205;</span>Salão de Eventos Kurhula, Bairro de Intaka, Paragem Barraquinha  </p>
+          <a href="https://maps.app.goo.gl/87qzw4mJhhazsBBt9" class="ghost-btn">Ver Localização &#8599;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    
+
+  </div>
+</section>
+
+  <!-- 6. CONTAGEM REGRESSIVA -->
+  <section id="contagem" class="section">
+    <div class="section-inner reveal">
+      <span class="icon-circle">&#128337;</span>
+      <h2 class="script-title">Contagem Regressiva</h2>
+      <p class="lede">Faltam poucos dias para o grande dia</p>
+
+      <div class="countdown" id="countdown">
+        <div class="count-box"><span class="count-num" id="cd-days">00</span><span class="count-label">Dias</span></div>
+        <div class="count-box"><span class="count-num" id="cd-hours">00</span><span class="count-label">Horas</span></div>
+        <div class="count-box"><span class="count-num" id="cd-mins">00</span><span class="count-label">Minutos</span></div>
+        <div class="count-box"><span class="count-num" id="cd-secs">00</span><span class="count-label">Segundos</span></div>
+      </div>
+      <p class="celebrated-msg" id="celebratedMsg" hidden>Já celebramos este dia maravilhoso! &#127881;</p>
+    </div>
+  </section>
+
+  <!-- 9. MENSAGENS E CONVIDADOS -->
+  <section id="mensagens" class="section alt last">
+    <div class="section-inner reveal narrow">
+      <span class="icon-circle">&#10084;</span>
+      <p class="verse small">"Cada segundo que passa nos aproxima do dia mais feliz de nossas vidas"</p>
+      <p class="script-sign">Matilde &amp; Inocêncio</p>
+
+      <div class="sep-dot"><span></span><i></i><span></span></div>
+
+      <span class="icon-circle">&#128172;</span>
+      <h2 class="script-title">Mensagens dos Convidados</h2>
+
+      <div class="messages-wall" id="messagesWall"></div>
+
+      <form id="messageForm" class="message-form">
+        <textarea id="novaMensagem" rows="3" placeholder="Deixe uma mensagem de carinho para os noivos..." required></textarea>
+        <input type="text" id="autorMensagem" placeholder="O teu nome" required>
+        <button type="submit" class="submit-btn small">Enviar Mensagem</button>
+      </form>
+
+      <p class="final-thanks">Com amor, Matilde &amp; Inocêncio&#10084;</p>
+    </div>
+  </section>
+  <!-- 5. VERSÍCULO -->
+  <section id="versiculo" class="section alt">
+    <div class="section-inner reveal narrow">
+      <span class="icon-circle">&#128214;</span>
+      <span class="heart-sep">&#10084;</span>
+      <p class="verse">" Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão do SENHOR fez isto, e o Santo de Israel o criou."</p>
+      <p class="verse-ref">Isaias 41:20</p>
+    </div>
+  </section>
+
+  <!-- ================================
+     SEÇÃO: EMOCIONANTES & APAIXONADAS
+     ================================ -->
+<section class="em-secao" id="emocionantes">
+
+  <div class="em-container">
+
+    <!-- Título -->
+    <h2 class="em-titulo">
+      Emocionantes
+      <span>&amp; Apaixonadas</span>
+    </h2>
+
+    <!-- Mensagem 1 -->
+    <div class="em-mensagem em-mensagem-esquerda">
+      <span class="em-aspas em-aspas-abertura">“</span>
+
+      <p>
+        Eu escolhi você ontem, escolho hoje e
+        prometo continuar te escolhendo todos os
+        dias da minha vida.
+      </p>
+    </div>
+
+    <!-- Mensagem 2 -->
+    <div class="em-mensagem em-mensagem-direita">
+      <span class="em-aspas em-aspas-fechamento">”</span>
+
+      <p>
+        A partir de hoje, não existe mais o meu
+        caminho ou o seu: existe a nossa estrada,
+        caminhando lado a lado.
+      </p>
+    </div>
+
+    <!-- Mensagem 3 -->
+    <div class="em-mensagem em-mensagem-esquerda">
+      <span class="em-aspas em-aspas-abertura">“</span>
+
+      <p>
+        Te agradeço por ser o meu porto seguro,
+        o meu melhor amigo(a) e o amor da minha
+        vida. Que comece o nosso para sempre!
+      </p>
+    </div>
+
+    <!-- Assinatura -->
+    <div class="em-assinatura">
+      Matilde & Inocêncio
+    </div>
+
+  </div>
+
+</section>
+
+ <!-- 7. CONFIRME SUA PRESENÇA (intro) -->
+  <section id="confirmar" class="section alt">
+    <div class="section-inner reveal narrow">
+      <span class="icon-circle">&#128198;</span>
+      <h2 class="script-title">Confirme sua Presença</h2>
+      <p class="lede">Sua presença é o melhor presente que podemos receber</p>
+      <div class="deadline-pill">Confirme a sua presença</div>
+      <a href="#rsvp" class="ghost-btn solid">Confirmar agora</a>
+    </div>
+  </section>
+
+  <!-- 8. FORMULÁRIO RSVP -->
+  <section id="rsvp" class="section">
+    <div class="section-inner reveal narrow">
+      <form id="rsvpForm" class="rsvp-form" novalidate>
+        <label class="field">
+          <span class="field-label">&#128100; Nome Completo *</span>
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+        </label>
+        <label class="field">
+          <span class="field-label">&#128100; Nome do acompanhante(opcional) *</span>
+          <input type="text" id="acompanhante" name="acompanhante" placeholder="Digite nome do seu acompanhante" required>
+        </label>
+        <label class="field">
+          <span class="field-label">&#128222; Telefone *</span>
+          <input type="tel" id="telefone" name="telefone" placeholder="+258 83 4966 519" required>
+        </label>
+
+        <fieldset class="field">
+          <legend class="field-label">&#10084; Confirma presença? *</legend>
+          <label class="radio-option">
+            <input type="radio" name="presenca" value="sim" checked>
+            <span>Sim, estarei presente</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="presenca" value="nao">
+            <span>Infelizmente não poderei comparecer</span>
+          </label>
+        </fieldset>
+
+        <label class="field">
+          <span class="field-label">&#128172; Mensagem para os noivos (opcional)</span>
+          <textarea id="mensagemRsvp" name="mensagemRsvp" rows="4" placeholder="Deixe uma mensagem especial para os noivos..."></textarea>
+        </label>
+
+        <button type="submit" class="submit-btn">
+          <span class="send-icon">&#10148;</span> Confirmar Presença
+        </button>
+      </form>
+
+      <div class="rsvp-success" id="rsvpSuccess" hidden>
+        <span class="icon-circle">&#10004;</span>
+        <h3>Obrigado, <span id="successName">convidado</span>!</h3>
+        <p>A tua confirmação foi registada com carinho. Mal podemos esperar para celebrar contigo.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/script.js"></script>
+</body>
+</html>
