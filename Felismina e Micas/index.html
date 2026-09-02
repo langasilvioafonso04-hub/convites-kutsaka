@@ -101,7 +101,7 @@
 
      <div class="agenda-row">
         <div class="label">Cerimónia Religiosa</div>
-        <div class="time">10H00</div>
+        <div class="time">9H00</div>
         <div class="venue">Igreja Promessa de Reino-Boquisso, paragem Manhembana</div>
         <a class="map-btn" href="https://maps.app.goo.gl/rhMh7u6346uKcxpL8" target="_blank">📍 Mapa</a>
       </div>
@@ -147,31 +147,72 @@
   </section>
 
   <!-- ===================== RSVP ===================== -->
-  
+  <!-- ===================== MANUAL DO CONVIDADO ===================== -->
+<section id="manual" class="alt">
+  <div class="reveal">
+    <div class="script-title" style="font-size:44px; margin-bottom:2px;">Manual</div>
+    <div class="manual-subtitle">do Convidado</div>
 
-  <!-- ===================== PRESENTE ===================== -->
-    <section id="mensagens" class="section alt last">
-    <div class="section-inner reveal narrow">
-      <span class="icon-circle">&#10084;</span>
-      <p class="verse small">"Cada segundo que passa nos aproxima desse dia especial"</p>
-      <p class="script-sign">Felismina &amp; Micas</p>
+    <div class="manual-grid">
+      <div class="manual-item">
+        <span class="manual-icon">✓</span>
+        <p>Confirme sua presença</p>
+      </div>
+      <div class="manual-item">
+        <span class="manual-icon">📵</span>
+        <p>Deixe seu celular no silencioso!</p>
+      </div>
 
-      <div class="sep-dot"><span></span><i></i><span></span></div>
+      <div class="manual-item">
+        <span class="manual-icon">💌</span>
+        <p>Convidado não convida!</p>
+      </div>
+      <div class="manual-item">
+        <span class="manual-icon">🍰</span>
+        <p>Aguarde a liberação da mesa de doces</p>
+      </div>
 
-      <span class="icon-circle">&#128172;</span>
-      <h2 class="script-title">Mensagens dos Convidados</h2>
+      <div class="manual-item">
+        <span class="manual-icon">⏰</span>
+        <p>Não se atrase. Seja pontual</p>
+      </div>
+      <div class="manual-item">
+        <span class="manual-icon">💐</span>
+        <p>Não leve a decoração para casa</p>
+      </div>
 
-      <div class="messages-wall" id="messagesWall"></div>
+      <div class="manual-item">
+        <span class="manual-icon">⛪</span>
+        <p>Participe da cerimónia</p>
+      </div>
+      <div class="manual-item">
+        <span class="manual-icon">🤝</span>
+        <p>Não faça comentários negativos</p>
+      </div>
 
-      <form id="messageForm" class="message-form">
-        <textarea id="novaMensagem" rows="3" placeholder="Deixe uma mensagem de carinho para o casal..." required></textarea>
-        <input type="text" id="autorMensagem" placeholder="O teu nome" required>
-        <button type="submit" class="submit-btn small">Enviar Mensagem</button>
-      </form>
+      <div class="manual-item">
+        <span class="manual-icon">👰</span>
+        <p>Branco é a cor da noiva</p>
+      </div>
+      <div class="manual-item">
+        <span class="manual-icon">🎉</span>
+        <p>Aproveite bastante!</p>
+      </div>
 
-      <p class="final-thanks"> &#10084;Felismina &amp; Micas</p>
+      <div class="manual-item">
+        <span class="manual-icon">📷</span>
+        <p>Não atrapalhe os fotógrafos</p>
+      </div>
+      <div class="manual-item">
+        <span class="manual-icon">💑</span>
+        <p>Não saia sem se despedir dos noivos!</p>
+      </div>
     </div>
-  </section>
+
+    <p class="manual-signature">Felismina e Micas</p>
+  </div>
+</section>
+
   
 
   <!-- ===================== VERSÍCULO 2 ===================== -->
@@ -200,6 +241,31 @@
     </div>
   </section>
 
+  <!-- ===================== PRESENTE ===================== -->
+    <section id="mensagens" class="section alt last">
+    <div class="section-inner reveal narrow">
+      <span class="icon-circle">&#10084;</span>
+      <p class="verse small">"Cada segundo que passa nos aproxima desse dia especial"</p>
+      <p class="script-sign">Felismina &amp; Micas</p>
+
+      <div class="sep-dot"><span></span><i></i><span></span></div>
+
+      <span class="icon-circle">&#128172;</span>
+      <h2 class="script-title">Mensagens dos Convidados</h2>
+
+      <div class="messages-wall" id="messagesWall"></div>
+
+      <form id="messageForm" class="message-form">
+        <textarea id="novaMensagem" rows="3" placeholder="Deixe uma mensagem de carinho para o casal..." required></textarea>
+        <input type="text" id="autorMensagem" placeholder="O teu nome" required>
+        <button type="submit" class="submit-btn small">Enviar Mensagem</button>
+      </form>
+
+      <p class="final-thanks"> &#10084;Felismina &amp; Micas</p>
+    </div>
+  </section>
+  
+
   <!-- ===================== ENCERRAMENTO ===================== -->
   <section id="closing">
     <div class="reveal">
@@ -212,23 +278,11 @@
       <div class="script-title">R.S.V.P.</div>
       <form id="rsvpForm">
         <div class="form-field">
-          <label for="nome">Nome e Apelido *</label>
-          <input type="text" id="nome" name="nome" placeholder="Ex.: António João" required>
-        </div>
-        <div class="form-field">
-          <label for="celular">Celular *</label>
-          <input type="tel" id="celular" name="celular" placeholder="Ex.: +258 834966519" required>
-        </div>
-        <div class="form-field">
-          <label for="presenca">Estará presente? *</label>
+          <label for="presenca" style="font-weight: bold; text-align: center;">Estará presente? *</label>
           <select id="presenca" name="presenca" required>
             <option value="sim">Sim, estarei. (Yes, I'll be there)</option>
             <option value="nao">Não poderei ir. (No, I can't make it)</option>
           </select>
-        </div>
-        <div class="form-field">
-          <label for="mensagem">Por favor, escreva aqui as suas felicitações pela nossa união.</label>
-          <textarea id="mensagem" name="mensagem"></textarea>
         </div>
         <button type="submit" id="submitBtn">Submeter</button>
         <div class="rsvp-msg" id="rsvpMsg">Obrigado! A sua confirmação foi recebida. 💛</div>

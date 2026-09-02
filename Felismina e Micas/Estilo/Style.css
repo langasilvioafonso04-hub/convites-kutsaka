@@ -643,3 +643,66 @@
   color:var(--gold, #B8894A);
   margin-top:34px;
 }
+
+/* ---------- MANUAL DO CONVIDADO ---------- */
+#manual.alt{ background:var(--cream-deep); padding-top:70px; padding-bottom:70px; }
+
+#manual .manual-subtitle{
+  font-family:'Cormorant Garamond', serif;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:14px;
+  color:var(--ink-soft);
+  margin-bottom:36px;
+}
+
+.manual-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:26px 18px;
+  width:100%;
+  max-width:440px;
+  text-align:left;
+}
+
+.manual-item{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+}
+
+.manual-icon{
+  flex-shrink:0;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:#fff;
+  border:1px solid var(--gold-line);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  box-shadow:0 8px 18px -12px rgba(60,45,20,.35);
+}
+
+.manual-item p{
+  font-family:'Poppins', sans-serif;
+  font-weight:400;
+  font-size:12.5px;
+  line-height:1.4;
+  color:var(--ink);
+  margin-top:2px;
+}
+
+.manual-signature{
+  font-family:'Alex Brush', cursive;
+  font-size:22px;
+  color:var(--gold);
+  margin-top:40px;
+}
+
+@media (max-width:380px){
+  .manual-grid{ gap:22px 12px; }
+  .manual-icon{ width:34px; height:34px; font-size:14px; }
+  .manual-item p{ font-size:11.5px; }
+}

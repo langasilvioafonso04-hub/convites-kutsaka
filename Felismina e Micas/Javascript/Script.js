@@ -90,21 +90,15 @@
   rsvpForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const nome = document.getElementById('nome').value.trim();
-    const celular = document.getElementById('celular').value.trim();
     const presencaSelect = document.getElementById('presenca');
     const presencaTexto = presencaSelect.options[presencaSelect.selectedIndex].text;
-    const mensagem = document.getElementById('mensagem').value.trim();
+  
 
     // Monta o texto que vai aparecer já escrito no WhatsApp
-    let texto = 'Confirmação de presença - Casamento Matilde & Inocêncio\n\n';
-    texto += `Nome: ${nome}\n`;
-    texto += `Celular: ${celular}\n`;
+    let texto = 'Confirmação de presença - Casamento Felismina & Micas\n\n';
+   
     texto += `Estará presente: ${presencaTexto}\n`;
-    if (mensagem) {
-      texto += `Mensagem: ${mensagem}\n`;
-    }
-
+    
     const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(texto)}`;
 
     rsvpMsg.classList.add('show');
