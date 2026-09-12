@@ -48,7 +48,7 @@
 
   // ---------- Contagem regressiva ----------
   // Ajuste a data/hora do casamento aqui:
-  const weddingDate = new Date('2026-09-19T14:00:00');
+  const weddingDate = new Date('2026-09-19T12:00:00');
 
   function updateCountdown() {
     const now = new Date();
