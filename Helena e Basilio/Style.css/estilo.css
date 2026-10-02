@@ -59,3 +59,184 @@ main{padding-bottom:40px}
 #abrir{background:var(--ouro);border:0;border-radius:60px;padding:22px 36px;font:700 24px 'Times New Roman',serif;cursor:pointer}
 #som{position:fixed;right:14px;bottom:14px;width:46px;height:46px;border-radius:50%;border:0;background:var(--verde);color:#fff;font-size:22px;z-index:30;cursor:pointer}
 #som.mudo{opacity:.5}
+
+/* ===== Lista de Presentes ===== */
+.presentes{
+  padding:48px 18px;
+  background:#faf5ec;
+  text-align:center;
+}
+.presentes-caixa{
+  max-width:520px;
+  margin:0 auto;
+  padding:34px 22px;
+  background:#fffdf8;
+  border:1px solid #d9c08a;
+  border-radius:18px;
+  box-shadow:0 8px 28px rgba(120,90,30,.12);
+  position:relative;
+}
+.presentes-caixa::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:1px dashed #e4d2a8;
+  border-radius:12px;
+  pointer-events:none;
+}
+.presentes-icone{font-size:38px;margin-bottom:4px}
+.presentes h2{
+  font-family:'Lobster',cursive;
+  font-weight:400;
+  font-size:34px;
+  color:#8a6a1f;
+  margin:0;
+}
+.presentes-linha{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:center;
+  margin:10px auto 18px;
+  max-width:200px;
+  color:#c9a24a;
+}
+.presentes-linha::before,
+.presentes-linha::after{
+  content:"";
+  flex:1;
+  height:1px;
+  background:#d9c08a;
+}
+.presentes-texto{
+  font-family:'Cormorant Garamond',serif;
+  font-size:19px;
+  line-height:1.5;
+  color:#5a4a2a;
+  margin:0 0 22px;
+}
+.presente-cartao{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  text-align:left;
+  background:#fff;
+  border:1px solid #eadcb9;
+  border-radius:14px;
+  padding:16px;
+  margin-bottom:14px;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.presente-cartao:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 18px rgba(120,90,30,.15);
+}
+.presente-ic{
+  flex:0 0 46px;
+  height:46px;
+  display:grid;
+  place-items:center;
+  font-size:22px;
+  background:#f4e8c9;
+  border-radius:50%;
+}
+.presente-cartao h3{
+  font-family:'Open Sans',sans-serif;
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:.5px;
+  color:#8a6a1f;
+  margin:0 0 4px;
+  text-transform:uppercase;
+}
+.presente-cartao p{
+  font-family:'Cormorant Garamond',serif;
+  font-size:18px;
+  line-height:1.4;
+  color:#5a4a2a;
+  margin:0;
+}
+.presente-cartao .titular{font-style:italic;color:#7a6a4a}
+.presente-cartao .numero{
+  font-family:'Open Sans',sans-serif;
+  font-weight:600;
+  font-size:16px;
+  color:#3f3217;
+  margin:6px 0 10px;
+  word-break:break-all;
+}
+.copiar{
+  font-family:'Open Sans',sans-serif;
+  font-weight:600;
+  font-size:12px;
+  letter-spacing:.5px;
+  color:#fff;
+  background:#b8903a;
+  border:0;
+  border-radius:20px;
+  padding:8px 16px;
+  cursor:pointer;
+  transition:background .2s ease, transform .15s ease;
+}
+.copiar:hover{background:#9c7a2c}
+.copiar:active{transform:scale(.95)}
+.copiar.ok{background:#4f8a4f}
+.presentes-ou{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:18px;
+  color:#8a6a1f;
+  margin:18px 0;
+}
+.presentes-final{
+  font-family:'Lobster',cursive;
+  font-size:20px;
+  color:#8a6a1f;
+  margin:22px 0 0;
+}
+@media (max-width:420px){
+  .presente-cartao{flex-direction:column;align-items:center;text-align:center}
+}
+.sem-criancas{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:19px;
+  text-align:center;
+  margin:14px 0;}
+
+/* ===== Programa: ícones mais visíveis (fundo claro) ===== */
+/* ===== Programa: ícones com círculo castanho ===== */
+.programa .item{
+  align-items:center;
+  gap:16px;
+}
+.programa .item .ic{
+  flex:0 0 68px;
+  width:68px;
+  height:68px;
+  display:grid;
+  place-items:center;
+  font-size:32px;
+  line-height:1;
+  background:linear-gradient(145deg,#a0724a,#6f4426);
+  border:3px solid #d9b98a;
+  border-radius:50%;
+  box-shadow:
+    0 0 0 4px rgba(111,68,38,.18),
+    0 8px 16px rgba(111,68,38,.4);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.programa .item:hover .ic{
+  transform:scale(1.08) rotate(-4deg);
+  box-shadow:
+    0 0 0 6px rgba(111,68,38,.25),
+    0 10px 20px rgba(111,68,38,.5);
+}
+@media (max-width:420px){
+  .programa .item .ic{
+    flex-basis:58px;
+    width:58px;
+    height:58px;
+    font-size:27px;
+  }
+}

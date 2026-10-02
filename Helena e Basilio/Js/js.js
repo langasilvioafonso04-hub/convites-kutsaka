@@ -1,5 +1,5 @@
 // ===== Configuração =====
-const DATA_CASAMENTO = new Date('2026-11-07T14:30:00+02:00'); // hora de Maputo
+const DATA_CASAMENTO = new Date('2026-11-07T07:30:00+02:00'); // hora de Maputo
 const WHATSAPP = '258844457120'; // <- troque pelo número dos noivos
 const MENSAGEM = 'Olá! Confirmo a minha presença no casamento de Helena & Basilio.';
 
@@ -61,4 +61,36 @@ regras.forEach(([e,t,txt])=>{
 
 // ===== Confirmar presença =====
 document.getElementById('confirmar').href=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(MENSAGEM)}`;
+
+// ===== Lista de Presentes: copiar M-Pesa / NIB =====
+document.querySelectorAll('.copiar').forEach(function (btn) {
+  var textoOriginal = btn.textContent;
+
+  btn.addEventListener('click', function () {
+    var valor = btn.getAttribute('data-copiar');
+
+    function sucesso() {
+      btn.textContent = '✓ Copiado!';
+      btn.classList.add('ok');
+      setTimeout(function () {
+        btn.textContent = textoOriginal;
+        btn.classList.remove('ok');
+      }, 2000);
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(valor).then(sucesso);
+    } else {
+      // alternativa para navegadores antigos
+      var t = document.createElement('textarea');
+      t.value = valor;
+      t.style.position = 'fixed';
+      t.style.opacity = '0';
+      document.body.appendChild(t);
+      t.select();
+      try { document.execCommand('copy'); sucesso(); } catch (e) {}
+      document.body.removeChild(t);
+    }
+  });
+});
 
