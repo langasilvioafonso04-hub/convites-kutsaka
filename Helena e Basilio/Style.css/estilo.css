@@ -1,0 +1,61 @@
+:root{--verde:#1f6f63;--ouro:#e0bf5c;--borda:#3f5a28;--menta:#f1fbf6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Cormorant Garamond','Times New Roman',serif;background:#fff;color:#111;max-width:520px;margin:0 auto;padding-top:60px}
+header{position:fixed;top:0;left:50%;transform:translateX(-50%);width:100%;max-width:520px;height:60px;background:#fff;border-bottom:1px solid #ccc;display:flex;align-items:center;padding:0 28px;z-index:20}
+header span{font:700 26px 'Open Sans',sans-serif;color:var(--verde)}
+main{padding-bottom:40px}
+.versiculo{text-align:center;font-size:22px;line-height:1.3;padding:60px 28px 40px}
+.capa{width:calc(100% - 48px);margin:0 24px;display:block}
+.contagem{margin:50px 24px 0;border:3px solid var(--borda);border-radius:30px;padding:32px 10px 26px;text-align:center}
+.contagem h2{color:#3a9a78;font-size:26px;letter-spacing:2px;line-height:1.4}
+.coracao{display:flex;align-items:center;justify-content:center;gap:14px;margin:26px 0 36px;color:var(--borda);font-size:38px}
+.coracao i{width:20%;height:2px;background:var(--borda)}
+.tempo{display:flex}
+.tempo div{flex:1;border-right:2px solid #c9c6b8}
+.tempo div:last-child{border:0}
+.tempo strong{display:block;font:400 54px 'Times New Roman',serif}
+.tempo span{font-size:14px;letter-spacing:2px}
+.data{margin:50px 24px 0;background:var(--menta);display:flex;align-items:center;justify-content:center;padding:6px 0}
+.data .lado{flex:1;text-align:center;font-weight:600;font-size:26px;color:#0b3c4a;border-top:2px solid #0b5565;border-bottom:2px solid #0b5565;padding:6px 0;margin:0 6px}
+.data .centro{display:flex;flex-direction:column;align-items:center;line-height:1}
+.data small{font-weight:700;font-size:16px;color:#0b2f3a}
+.data b{font-size:68px;color:#0b5565;line-height:.9}
+.carrossel{position:relative;margin:50px 24px 0;overflow:hidden}
+.slides{display:flex;align-items:center;transition:transform .5s}
+.slides img{width:100%;flex:0 0 100%;height:auto;object-fit:contain;display:block}
+.seta{position:absolute;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;border:0;background:rgba(40,40,45,.8);color:#fff;font-size:34px;cursor:pointer}
+.seta.esq{left:12px}.seta.dir{right:12px}
+.pontos{display:flex;justify-content:center;gap:16px;margin:40px 0 30px}
+.pontos span{width:22px;height:22px;border-radius:50%;background:#ccc}
+.pontos .on{background:var(--verde)}
+.programa{margin:0 24px}
+.item{background:var(--menta);padding:12px 4% ;margin-bottom:46px}
+.item{display:flex;align-items:center;gap:14px;border:2px solid var(--verde);border-radius:10px;background:#f8fffb;padding:12px 14px}
+.ic{flex:0 0 56px;height:56px;border-radius:50%;background:var(--verde);display:grid;place-items:center;font-size:26px;filter:grayscale(1) brightness(3)}
+.item h3{font-size:24px;border-left:2px solid #333;padding-left:12px;line-height:1.1}
+.item p{font-size:18px;padding-left:14px}
+.verde{background:var(--verde);color:#fff;text-align:center;padding:50px 28px}
+.verde h2{font:700 30px 'Open Sans',sans-serif;line-height:1.5}
+.manual{padding-bottom:50px}
+.cartao{background:#fff;color:#0a3d9c;margin:50px -28px 0;padding:34px 12px 24px;font-family:'Open Sans',sans-serif;border-top:8px solid #2a9be0;border-bottom:8px solid #2a9be0}
+.cartao h3{font-size:25px;font-weight:700}
+.cartao em{display:block;font:italic 400 34px 'Lobster',cursive;margin-bottom:20px}
+.grade{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 6px;text-align:left}
+.grade button{background:none;border:0;display:flex;align-items:center;gap:6px;font:600 14px 'Open Sans',sans-serif;color:#0a2a6e;text-align:left;cursor:pointer}
+.grade button .e{font-size:30px;filter:hue-rotate(180deg) saturate(2)}
+.grade button:active{transform:scale(.95)}
+.rodape{margin-top:20px;font-weight:600;font-size:15px}
+#dica{margin-top:16px;min-height:0;background:#eaf2ff;border-radius:12px;padding:0 14px;font-size:15px;max-height:0;overflow:hidden;transition:.3s}
+#dica.on{max-height:120px;padding:12px 14px}
+.convite{padding-top:60px}
+.convite h2{font:700 38px 'Times New Roman',serif}
+.convite p{font-size:34px;line-height:1.35;margin-top:26px}
+.convite .amor{margin-top:70px}
+.convite .noivos{font:400 44px 'Lobster',cursive}
+.rsvp{padding:60px 8% 80px}
+.rsvp a{display:block;text-align:center;background:var(--ouro);color:#000;font:700 28px 'Times New Roman',serif;letter-spacing:1px;text-decoration:none;padding:36px 10px;border-radius:60px}
+#overlay{position:fixed;inset:0;background:var(--verde);display:grid;place-items:center;z-index:50;transition:opacity .6s}
+#overlay.sai{opacity:0;pointer-events:none}
+#abrir{background:var(--ouro);border:0;border-radius:60px;padding:22px 36px;font:700 24px 'Times New Roman',serif;cursor:pointer}
+#som{position:fixed;right:14px;bottom:14px;width:46px;height:46px;border-radius:50%;border:0;background:var(--verde);color:#fff;font-size:22px;z-index:30;cursor:pointer}
+#som.mudo{opacity:.5}
