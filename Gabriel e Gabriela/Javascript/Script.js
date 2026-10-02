@@ -142,7 +142,7 @@ document.getElementById('bottomNav').classList.add('hidden');
     var secao = document.getElementById("cronograma");
     if (!secao) return;
 
-    var itens = secao.querySelectorAll(".crono-item");
+    var itens = secao.querySelectorAll(".crono__item");
 
     // Se o navegador não suportar, mostra tudo normalmente
     if (!("IntersectionObserver" in window)) return;
