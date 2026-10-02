@@ -644,7 +644,6 @@
   color:var(--gold, rgb(138, 149, 107));
   margin-top:34px;
 }
- 
 .crono {
     /* Mude as cores aqui para combinar com o seu site */
     --crono-fundo: #eeeee4;
@@ -774,4 +773,3 @@
     .crono__item { column-gap: 10px; grid-template-columns: 1fr 46px 1fr; }
     .crono__icone { width: 46px; height: 46px; font-size: 1.3rem; }
   }
-
