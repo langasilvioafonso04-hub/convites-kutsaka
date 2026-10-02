@@ -138,36 +138,36 @@ navSections.forEach(sec => navIo.observe(sec));
 // Garante que o menu já começa escondido, já que a página abre na capa
 document.getElementById('bottomNav').classList.add('hidden');
 
-(function () {
-    var secao = document.getElementById("cronograma");
-    if (!secao) return;
+/* =========================
+   ANIMAÇÃO DO CRONOGRAMA
+========================= */
 
-    var itens = secao.querySelectorAll(".crono__item");
+document.addEventListener("DOMContentLoaded", function () {
 
-    // Se o navegador não suportar, mostra tudo normalmente
-    if (!("IntersectionObserver" in window)) return;
+  const itens = document.querySelectorAll(".crono__item");
 
-    secao.classList.add("crono--js");
+  const observador = new IntersectionObserver(
+    function (entradas) {
 
-    var observador = new IntersectionObserver(
-      function (entradas) {
-        entradas.forEach(function (entrada) {
-          if (entrada.isIntersecting) {
-            entrada.target.classList.add("is-visivel");
-            observador.unobserve(entrada.target);
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
+      entradas.forEach(function (entrada) {
 
-    // cada evento aparece um pouco depois do anterior
-    itens.forEach(function (item, i) {
-      item.style.transitionDelay = i * 90 + "ms";
-      observador.observe(item);
-    });
-  })();
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("visivel");
+        }
 
+      });
+
+    },
+    {
+      threshold: 0.2
+    }
+  );
+
+  itens.forEach(function (item) {
+    observador.observe(item);
+  });
+
+});
 
 // ---------- Mural de Mensagens → Google Sheets ----------
 
