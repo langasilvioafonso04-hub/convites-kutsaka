@@ -645,5 +645,133 @@
   margin-top:34px;
 }
  
+.crono {
+    /* Mude as cores aqui para combinar com o seu site */
+    --crono-fundo: #eeeee4;
+    --crono-verde: #7e8b5a;
+    --crono-marrom: #4a4136;
+    --crono-linha: #c9ccb4;
 
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 56px 20px 120px; /* espaço embaixo para a barra de navegação */
+    text-align: center;
+    color: var(--crono-marrom);
+  }
+
+  .crono__titulo {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-size: clamp(2.2rem, 7vw, 3rem);
+    color: var(--crono-verde);
+    margin: 0 0 6px;
+  }
+
+  .crono__sub {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    color: #8a8a7a;
+    margin: 0 0 40px;
+  }
+
+  .crono__lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+
+  /* linha vertical que liga os eventos */
+  .crono__lista::before {
+    content: "";
+    position: absolute;
+    top: 26px;
+    bottom: 26px;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: repeating-linear-gradient(
+      to bottom,
+      var(--crono-linha) 0 6px,
+      transparent 6px 12px
+    );
+  }
+
+  .crono__item {
+    display: grid;
+    grid-template-columns: 1fr 52px 1fr;
+    align-items: center;
+    column-gap: 14px;
+    padding: 14px 0;
+    position: relative;
+  }
+
+  .crono__hora {
+    grid-column: 1;
+    text-align: right;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--crono-verde);
+    line-height: 1;
+  }
+
+  .crono__icone {
+    grid-column: 2;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: var(--crono-fundo);
+    border: 2px solid var(--crono-verde);
+    position: relative;
+    z-index: 1;
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .crono__item:hover .crono__icone {
+    background: var(--crono-verde);
+    transform: scale(1.08);
+  }
+
+  .crono__texto {
+    grid-column: 3;
+    text-align: left;
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+
+  /* animação de entrada (ativada pelo JavaScript) */
+  .crono--js .crono__item {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .crono--js .crono__item.is-visivel {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .crono--js .crono__item {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .crono__icone { transition: none; }
+  }
+
+  @media (max-width: 380px) {
+    .crono__hora { font-size: 1.35rem; }
+    .crono__texto { font-size: 1rem; }
+    .crono__item { column-gap: 10px; grid-template-columns: 1fr 46px 1fr; }
+    .crono__icone { width: 46px; height: 46px; font-size: 1.3rem; }
+  }
 
