@@ -239,19 +239,18 @@ main{padding-bottom:40px}
     height:58px;
     font-size:27px;
   }
-  .btn-mapa {
+  .programa .item a.btn-mapa {
   display: inline-block;
-  margin-top: 8px;
+  margin: 8px 0 0 14px;          /* alinha com o texto acima */
   padding: 6px 14px;
-  background: #1f6f63;      /* ajusta ao verde do teu site */
+  background: #1f6f63;           /* verde do teu site */
   color: #fff;
   font-size: 0.85rem;
   text-decoration: none;
   border-radius: 20px;
   transition: background 0.2s, transform 0.2s;
 }
-.btn-mapa:hover {
+.programa .item a.btn-mapa:hover {
   background: #17554c;
   transform: translateY(-1px);
-}
 }
