@@ -643,3 +643,136 @@
   color:var(--gold, #B8894A);
   margin-top:34px;
 }
+
+
+/* ================= LISTA DE PRESENTES ================= */
+
+#presentes {
+    padding: 65px 20px 80px;
+    background: #f4ecdc;
+    text-align: center;
+    position: relative;
+}
+
+.eyebrow-gold {
+    color: #bd8b45;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.presentes-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-style: italic;
+    color: #c18d48;
+    margin-bottom: 18px;
+}
+
+.presentes-description {
+    max-width: 450px;
+    margin: 0 auto 25px;
+    color: #817567;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.gold-divider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto 35px;
+    gap: 12px;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+    content: "";
+    width: 45px;
+    height: 1px;
+    background: #c18d48;
+}
+
+.gold-divider span {
+    width: 6px;
+    height: 6px;
+    background: #c18d48;
+    border-radius: 50%;
+}
+
+.presentes-grid {
+    max-width: 650px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.presente-card {
+    background: #fffdf8;
+    border: 1px solid #e2c28d;
+    border-radius: 13px;
+    padding: 22px 12px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.presente-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(150, 111, 57, 0.12);
+}
+
+.presente-icon {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.presente-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: #a8793e;
+    margin: 0;
+}
+
+.presentes-footer {
+    margin-top: 35px;
+    color: #b98a4d;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    font-style: italic;
+}
+
+/* ADAPTAÇÃO PARA TELEMÓVEIS */
+
+@media (max-width: 480px) {
+
+    #presentes {
+        padding: 50px 15px 65px;
+    }
+
+    .presentes-title {
+        font-size: 32px;
+    }
+
+    .presentes-description {
+        font-size: 14px;
+    }
+
+    .presentes-grid {
+        gap: 10px;
+    }
+
+    .presente-card {
+        padding: 20px 8px;
+    }
+
+    .presente-icon {
+        font-size: 28px;
+    }
+
+    .presente-card h3 {
+        font-size: 17px;
+    }
+}
