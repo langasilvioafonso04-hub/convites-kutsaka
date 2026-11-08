@@ -186,3 +186,70 @@ messageForm.addEventListener('submit', (e) => {
 
   messageForm.reset();
 });
+
+
+// ================= LISTA DE PRESENTES =================
+
+const presentes = [
+    {
+        nome: "Air Fryer",
+        icone: "🍟"
+    },
+    {
+        nome: "Ar-condicionado",
+        icone: "❄️"
+    },
+    {
+        nome: "Máquina de lavar roupa",
+        icone: "🧺"
+    },
+    {
+        nome: "Conjunto de panelas antiaderentes (Teflon)",
+        icone: "🍳"
+    },
+    {
+        nome: "Fogão elétrico de embutir",
+        icone: "🔥"
+    },
+    {
+        nome: "Forno elétrico de embutir",
+        icone: "♨️"
+    },
+    {
+        nome: "Liquidificador",
+        icone: "🥤"
+    },
+    {
+        nome: "Micro-ondas",
+        icone: "🍽️"
+    },
+    {
+        nome: "Torradeira",
+        icone: "🍞"
+    },
+    {
+        nome: "Dinheiro",
+        icone: "💝"
+    }
+];
+
+const presentesGrid = document.getElementById("presentesGrid");
+
+presentes.forEach(presente => {
+
+    const card = document.createElement("div");
+
+    card.classList.add("presente-card");
+
+    card.innerHTML = `
+        <div class="presente-icon">
+            ${presente.icone}
+        </div>
+
+        <h3>${presente.nome}</h3>
+    `;
+
+    presentesGrid.appendChild(card);
+
+});
+
