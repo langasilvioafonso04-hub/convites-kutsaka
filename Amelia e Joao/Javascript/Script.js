@@ -247,6 +247,9 @@ presentes.forEach(presente => {
         </div>
 
         <h3>${presente.nome}</h3>
+        // ADICIONA O CARTÃO À PÁGINA
+        presentesGrid.appendChild(card);
+
     `;
 
     presentesGrid.appendChild(card);
