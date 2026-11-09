@@ -645,13 +645,13 @@
 }
 
 
+
 /* ================= LISTA DE PRESENTES ================= */
 
 #presentes {
     padding: 65px 20px 80px;
     background: #f4ecdc;
     text-align: center;
-    position: relative;
 }
 
 .eyebrow-gold {
@@ -714,8 +714,12 @@
     border: 1px solid #e2c28d;
     border-radius: 13px;
     padding: 22px 12px;
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 115px;
 }
 
 .presente-card:hover {
@@ -744,7 +748,7 @@
     font-style: italic;
 }
 
-/* ADAPTAÇÃO PARA TELEMÓVEIS */
+/* RESPONSIVIDADE */
 
 @media (max-width: 480px) {
 
@@ -765,7 +769,8 @@
     }
 
     .presente-card {
-        padding: 20px 8px;
+        padding: 18px 8px;
+        min-height: 110px;
     }
 
     .presente-icon {
