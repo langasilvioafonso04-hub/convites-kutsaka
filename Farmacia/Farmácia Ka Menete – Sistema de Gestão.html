@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Farmácia Ka Menete – Sistema de Gestão</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#f2f6f3;--card:#fff;--tx:#17251d;--mut:#5b6e62;--bd:#d9e3dc;--pri:#1f7a4d;--pt:#fff;--side:#0f3d2a;--wb:#fff1d6;--wt:#8a5200;--eb:#fde2e2;--et:#a11d1d;--ob:#dff3e6;--ot:#14633a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#101a15;--card:#18261f;--tx:#e6f0ea;--mut:#9db3a5;--bd:#2b3d33;--pri:#3fb27a;--pt:#07170f;--side:#0a251a;--wb:#3a2b0e;--wt:#f2c36b;--eb:#3d1a1a;--et:#f19a9a;--ob:#16382a;--ot:#7fdcab}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#101a15;--card:#18261f;--tx:#e6f0ea;--mut:#9db3a5;--bd:#2b3d33;--pri:#3fb27a;--pt:#07170f;--side:#0a251a;--wb:#3a2b0e;--wt:#f2c36b;--eb:#3d1a1a;--et:#f19a9a;--ob:#16382a;--ot:#7fdcab}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,"Segoe UI",Roboto,sans-serif}
+.sh{display:flex;min-height:100vh}
+aside{width:210px;background:var(--side);color:#e6f0ea;padding:16px 10px;flex:none;display:flex;flex-direction:column;gap:4px}
+aside h1{font-size:15px;margin:0 8px 14px;line-height:1.2}
+aside a{display:block;padding:9px 10px;border-radius:8px;color:inherit;text-decoration:none;cursor:pointer}
+aside a.on{background:#2fa56d;color:#06150d;font-weight:600}
+aside a:hover:not(.on){background:#ffffff1a}
+.us{margin-top:auto;font-size:13px;padding:8px;border-top:1px solid #ffffff30}
+main{flex:1;padding:20px;min-width:0}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+h2{margin:0;font-size:22px}h3{margin:0 0 8px;font-size:16px}
+.gr{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:14px}
+.cd{background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:14px;min-width:0}
+.cd b{display:block;font-size:28px;line-height:1.1}.cd span{color:var(--mut);font-size:13px}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
+.tw{overflow-x:auto;background:var(--card);border:1px solid var(--bd);border-radius:10px}
+table{border-collapse:collapse;width:100%}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--bd);white-space:nowrap}
+th{font-size:13px;color:var(--mut);font-weight:600}
+tr:last-child td{border-bottom:0}
+button{background:var(--pri);color:var(--pt);border:0;border-radius:8px;padding:8px 14px;font:inherit;font-weight:600;cursor:pointer}
+button.b2{background:transparent;color:var(--tx);border:1px solid var(--bd)}
+button.bd2{background:var(--eb);color:var(--et)}
+button.sm{padding:4px 9px;font-size:13px;margin-right:4px}
+button:disabled{opacity:.4;cursor:not-allowed}
+button:focus-visible,input:focus-visible,select:focus-visible,aside a:focus-visible{outline:2px solid var(--pri);outline-offset:2px}
+input,select{font:inherit;padding:8px 10px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);width:100%}
+.fl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:end}.fl>*{width:auto;flex:1 1 150px}
+.bg{display:inline-block;padding:2px 8px;border-radius:99px;font-size:12px;font-weight:600}
+.e{background:var(--eb);color:var(--et)}.w{background:var(--wb);color:var(--wt)}.o{background:var(--ob);color:var(--ot)}
+.ov{position:fixed;inset:0;background:#0009;display:flex;align-items:center;justify-content:center;padding:16px;z-index:20}
+.md{background:var(--card);border-radius:12px;padding:20px;width:100%;max-width:430px;max-height:90vh;overflow:auto}
+.md label{display:block;font-size:13px;color:var(--mut);margin-bottom:10px}
+.md label input,.md label select{margin-top:3px;color:var(--tx)}
+.bt{display:flex;gap:8px;justify-content:flex-end;margin-top:10px}
+#toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);padding:10px 16px;border-radius:8px;background:var(--pri);color:var(--pt);font-weight:600;z-index:30;display:none;max-width:90vw}
+#toast.er{background:var(--et);color:#fff}
+.lg{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px}
+.lg .cd{width:100%;max-width:370px;padding:24px}
+.lg h1{margin:0 0 4px;font-size:24px}
+.hint{font-size:12px;color:var(--mut);margin-top:14px;line-height:1.6}
+.err{color:var(--et);font-size:13px;min-height:18px}
+.rc{font-family:ui-monospace,Menlo,monospace;font-size:13px}.rc table td,.rc table th{padding:3px 4px}
+.tot{font-size:20px;font-weight:700;text-align:right;margin:10px 0}
+.em{padding:18px;color:var(--mut);text-align:center}
+td input{width:70px;padding:4px 6px}
+@media(max-width:760px){.sh{flex-direction:column}aside{width:100%;flex-direction:row;overflow-x:auto;padding:8px;align-items:center}aside h1{display:none}aside a{white-space:nowrap}.us{margin:0 0 0 auto;border:0;white-space:nowrap}main{padding:12px}}
+@media print{body *{visibility:hidden}.rc,.rc *{visibility:visible}.rc{position:absolute;left:0;top:0;width:100%}}
+</style>
+</head>
+<body>
+<div id="app"></div><div id="modal"></div><div id="toast"></div>
+<script>
+const $=s=>document.querySelector(s),K='kamenete_v3',MIN=10;
+const td=()=>new Date().toISOString().slice(0,10);
+const addD=n=>{const d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)};
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=n=>(+n).toLocaleString('pt-PT',{minimumFractionDigits:2,maximumFractionDigits:2})+' MT';
+const ROLE={admin:'Administrador',atendente:'Atendente',stock:'Responsável pelo stock'};
+const PERM={admin:['painel','medicamentos','categorias','stock','fornecedores','compras','vendas','relatorios','historico','utilizadores'],atendente:['painel','medicamentos','stock','vendas'],stock:['painel','medicamentos','categorias','stock','fornecedores','compras']};
+const NAV={painel:'Painel',medicamentos:'Medicamentos',categorias:'Categorias',stock:'Stock',fornecedores:'Fornecedores',compras:'Compras',vendas:'Vendas',relatorios:'Relatórios',historico:'Histórico',utilizadores:'Utilizadores'};
+function seed(){const m=(id,nome,desc,preco,qtd,val,cat)=>({id,nome,desc,preco,qtd,val,cat});
+return{users:[{id:1,nome:'Administrador',user:'admin',pass:'admin123',perfil:'admin',activo:'Sim'},{id:2,nome:'Sílvio Afonso Langa',user:'silvio',pass:'silvio123',perfil:'atendente',activo:'Sim'},{id:3,nome:'Allen Nhico Homo',user:'allen',pass:'allen123',perfil:'stock',activo:'Sim'},{id:4,nome:'Airton Mendes Menete',user:'airton',pass:'airton123',perfil:'stock',activo:'Sim'}],
+cats:[{id:1,nome:'Analgésicos',desc:'Alívio da dor e da febre'},{id:2,nome:'Antibióticos',desc:'Combate a infecções'},{id:3,nome:'Vitaminas',desc:'Suplementos vitamínicos'},{id:4,nome:'Anti-inflamatórios',desc:'Redução de inflamações'}],
+sups:[{id:1,nome:'MedDistri Lda',contacto:'+258 84 100 0001',end:'Maputo, Av. 24 de Julho'},{id:2,nome:'FarmaMoz',contacto:'+258 82 200 0002',end:'Matola'}],
+meds:[m(1,'Paracetamol 500 mg','Comprimidos, caixa 20',45,4,addD(15),1),m(2,'Amoxicilina 500 mg','Cápsulas, caixa 12',180,3,addD(13),2),m(3,'Ibuprofeno 400 mg','Comprimidos, caixa 20',95,5,addD(200),4),m(4,'Vitamina C 1 g','Efervescente, tubo 10',120,25,addD(33),3),m(5,'Diclofenac 50 mg','Comprimidos, caixa 20',110,40,addD(300),4),m(6,'Azitromicina 500 mg','Comprimidos, caixa 3',260,18,addD(400),2),m(7,'Ácido acetilsalicílico 100 mg','Comprimidos, caixa 30',70,60,addD(500),1)],
+purchases:[],sales:[],log:[]}}
+let db;try{db=JSON.parse(localStorage.getItem(K))}catch(e){}
+if(!db||!db.meds)db={users:[],cats:[],sups:[],meds:[],purchases:[],sales:[],log:[]};
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(db))}catch(e){}};
+const S={user:null,page:'painel',q:'',c:'',low:false,cart:[],psup:'',pit:[],rt:'vendas',d1:'',d2:''};
+let FORM,CB;
+const nid=a=>Math.max(0,...a.map(x=>x.id))+1;
+const lg=a=>{db.log.unshift({t:new Date().toLocaleString('pt-PT'),u:S.user?S.user.user:'-',a});db.log=db.log.slice(0,300)};
+const catN=id=>(db.cats.find(c=>c.id==id)||{nome:'-'}).nome;
+const medN=id=>db.meds.find(m=>m.id==id);
+const toast=(m,er)=>{const t=$('#toast');t.textContent=m;t.className=er?'er':'';t.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(()=>t.style.display='none',2800)};
+const closeM=()=>$('#modal').innerHTML='';
+const can=()=>S.user.perfil!='atendente';
+const nVenda=id=>'VD-'+String(id).padStart(4,'0'),nCompra=id=>'CP-'+String(id).padStart(4,'0');
+
+/* ---------- Entidades (CRUD) ---------- */
+const E={
+meds:{t:'Medicamentos',s:'medicamento',cols:[['Nome',r=>esc(r.nome)],['Categoria',r=>esc(catN(r.cat))],['Preço',r=>fmt(r.preco)],['Stock',r=>r.qtd],['Validade',r=>r.val]],
+ fs:()=>[{k:'nome',l:'Nome'},{k:'desc',l:'Descrição'},{k:'preco',l:'Preço (MT)',t:'number'},{k:'qtd',l:'Quantidade em stock',t:'number'},{k:'val',l:'Prazo de validade',t:'date'},{k:'cat',l:'Categoria',t:'select',n:1,o:()=>db.cats.map(c=>[c.id,c.nome])}]},
+cats:{t:'Categorias de medicamentos',s:'categoria',cols:[['Nome',r=>esc(r.nome)],['Descrição',r=>esc(r.desc)],['Medicamentos',r=>db.meds.filter(m=>m.cat==r.id).length]],fs:()=>[{k:'nome',l:'Nome da categoria'},{k:'desc',l:'Descrição'}]},
+sups:{t:'Fornecedores',s:'fornecedor',cols:[['Nome',r=>esc(r.nome)],['Contacto',r=>esc(r.contacto)],['Endereço',r=>esc(r.end)]],fs:()=>[{k:'nome',l:'Nome'},{k:'contacto',l:'Contacto'},{k:'end',l:'Endereço'}]},
+users:{t:'Utilizadores',s:'utilizador',cols:[['Nome',r=>esc(r.nome)],['Utilizador',r=>esc(r.user)],['Perfil',r=>ROLE[r.perfil]],['Activo',r=>r.activo]],
+ fs:()=>[{k:'nome',l:'Nome completo'},{k:'user',l:'Nome de utilizador'},{k:'pass',l:'Palavra-passe',t:'password'},{k:'perfil',l:'Perfil',t:'select',o:()=>Object.entries(ROLE)},{k:'activo',l:'Activo',t:'select',o:()=>[['Sim','Sim'],['Não','Não']]}]}};
+const inUse=(k,id)=>k=='cats'?db.meds.some(m=>m.cat==id):k=='sups'?db.purchases.some(p=>p.sup==id):k=='meds'?[...db.sales,...db.purchases].some(x=>x.it.some(i=>i.id==id)):false;
+function form(t,fs,v,ok){FORM={fs,ok};$('#modal').innerHTML=`<div class="ov"><div class="md"><h3>${t}</h3>${fs.map(f=>`<label>${f.l}${f.t=='select'?`<select id="f_${f.k}">${f.o().map(o=>`<option value="${esc(o[0])}" ${o[0]==v[f.k]?'selected':''}>${esc(o[1])}</option>`).join('')}</select>`:`<input id="f_${f.k}" type="${f.t||'text'}" value="${esc(v[f.k]??'')}" ${f.t=='number'?'min="0" step="any"':''}>`}</label>`).join('')}<div class="bt"><button class="b2" onclick="closeM()">Cancelar</button><button onclick="sub()">Guardar</button></div></div></div>`}
+function sub(){const o={};for(const f of FORM.fs){let x=$('#f_'+f.k).value.trim();if(x==='')return toast('Preencha todos os campos.',1);if(f.t=='number'){x=+x;if(isNaN(x)||x<0)return toast('Valor inválido em '+f.l+'.',1)}else if(f.n)x=+x;o[f.k]=x}if(FORM.ok(o)===false)return;closeM()}
+function ask(msg,fn){CB=fn;$('#modal').innerHTML=`<div class="ov"><div class="md"><h3>Confirmar</h3><p>${msg}</p><div class="bt"><button class="b2" onclick="closeM()">Não</button><button onclick="closeM();CB()">Sim</button></div></div></div>`}
+function edit(k,id){const e=E[k],r=id?db[k].find(x=>x.id==id):{};if(k=='meds'&&!db.cats.length)return toast('Registe primeiro uma categoria.',1);
+form((id?'Editar ':'Novo ')+e.s,e.fs(),r,o=>{if(k=='users'&&db.users.some(u=>u.user==o.user&&u.id!=id)){toast('Esse nome de utilizador já existe.',1);return false}
+ if(id)Object.assign(r,o);else db[k].push({id:nid(db[k]),...o});lg((id?'Editou ':'Registou ')+e.s+': '+(o.nome||o.user));save();render();toast('Guardado.')})}
+function del(k,id){if(inUse(k,id))return toast('Registo em uso. Não pode ser eliminado.',1);if(k=='users'&&id==S.user.id)return toast('Não pode eliminar a sua própria conta.',1);
+ const r=db[k].find(x=>x.id==id);ask('Eliminar '+esc(r.nome)+'?',()=>{db[k]=db[k].filter(x=>x.id!=id);lg('Eliminou '+E[k].s+': '+r.nome);save();render();toast('Eliminado.')})}
+function crud(k){const e=E[k],w=can();let rows=db[k];
+ if(k=='meds')rows=rows.filter(m=>(!S.q||m.nome.toLowerCase().includes(S.q.toLowerCase()))&&(!S.c||m.cat==S.c));
+ return `<div class="hd"><h2>${e.t}</h2>${w?`<button onclick="edit('${k}')">Novo ${e.s}</button>`:''}</div>${k=='meds'?searchBar(true):''}
+ <div class="tw"><table><tr>${e.cols.map(c=>`<th>${c[0]}</th>`).join('')}${w?'<th></th>':''}</tr>${rows.map(r=>`<tr>${e.cols.map(c=>`<td>${c[1](r)}</td>`).join('')}${w?`<td><button class="sm b2" onclick="edit('${k}',${r.id})">Editar</button><button class="sm bd2" onclick="del('${k}',${r.id})">Eliminar</button></td>`:''}</tr>`).join('')||`<tr><td class="em" colspan="9">Nenhum registo encontrado.</td></tr>`}</table></div>`}
+function searchBar(cat){return `<div class="fl"><input id="q" placeholder="Pesquisar por nome" value="${esc(S.q)}" oninput="S.q=this.value;render()">${cat?`<select id="c" onchange="S.c=this.value;render()"><option value="">Todas as categorias</option>${db.cats.map(c=>`<option value="${c.id}" ${S.c==c.id?'selected':''}>${esc(c.nome)}</option>`).join('')}</select>`:''}</div>`}
+
+/* ---------- Páginas ---------- */
+const stB=m=>m.qtd==0?'<span class="bg e">Esgotado</span>':m.qtd<=MIN?'<span class="bg w">Reduzido</span>':'<span class="bg o">Normal</span>';
+const vB=m=>m.val<td()?'<span class="bg e">Expirado</span>':m.val<=addD(60)?'<span class="bg w">Expira em breve</span>':'';
+const P={
+painel(){const low=db.meds.filter(m=>m.qtd<=MIN),ex=db.meds.filter(m=>m.val<=addD(60)).sort((a,b)=>a.val>b.val?1:-1),ok=db.sales.filter(s=>s.est=='Confirmada'),hj=ok.filter(s=>s.d==td()).length;
+return `<div class="hd"><h2>Painel de gestão</h2></div><div class="gr"><div class="cd"><b>${db.meds.length}</b><span>Medicamentos registados</span></div><div class="cd"><b>${low.length}</b><span>Com stock reduzido</span></div><div class="cd"><b>${hj}</b><span>Vendas de hoje</span></div><div class="cd"><b>${db.purchases.length}</b><span>Compras registadas</span></div></div>
+<div class="g2"><div class="cd"><h3>Vendas recentes</h3>${ok.length?`<table>${ok.slice(-5).reverse().map(s=>`<tr><td>${nVenda(s.id)}</td><td>${s.d}</td><td>${esc(s.u)}</td><td>${fmt(s.tot)}</td></tr>`).join('')}</table>`:'<div class="em">Ainda não há vendas. Registe a primeira no módulo Vendas.</div>'}</div>
+<div class="cd"><h3>Alertas de stock</h3>${low.length?`<table>${low.map(m=>`<tr><td>${esc(m.nome)}</td><td>${m.qtd} un.</td><td>${stB(m)}</td></tr>`).join('')}</table>`:'<div class="em">Sem alertas de stock.</div>'}</div>
+<div class="cd"><h3>Medicamentos próximos do prazo de validade</h3>${ex.length?`<table>${ex.map(m=>`<tr><td>${esc(m.nome)}</td><td>${m.val}</td><td>${m.qtd} un.</td><td>${vB(m)}</td></tr>`).join('')}</table>`:'<div class="em">Nenhum medicamento a expirar nos próximos 60 dias.</div>'}</div></div>`},
+medicamentos:()=>crud('meds'),categorias:()=>crud('cats'),fornecedores:()=>crud('sups'),utilizadores:()=>crud('users'),
+stock(){const r=db.meds.filter(m=>(!S.q||m.nome.toLowerCase().includes(S.q.toLowerCase()))&&(!S.low||m.qtd<=MIN));
+return `<div class="hd"><h2>Controlo de stock</h2></div><div class="fl"><input id="q" placeholder="Pesquisar medicamento" value="${esc(S.q)}" oninput="S.q=this.value;render()"><label style="flex:0 0 auto;display:flex;gap:6px;align-items:center"><input type="checkbox" style="width:auto" ${S.low?'checked':''} onchange="S.low=this.checked;render()">Apenas stock reduzido</label></div>
+<div class="tw"><table><tr><th>Medicamento</th><th>Categoria</th><th>Quantidade</th><th>Estado</th><th>Validade</th><th></th></tr>${r.map(m=>`<tr><td>${esc(m.nome)}</td><td>${esc(catN(m.cat))}</td><td>${m.qtd}</td><td>${stB(m)}</td><td>${m.val}</td><td>${vB(m)}</td></tr>`).join('')||'<tr><td class="em" colspan="6">Nenhum medicamento encontrado.</td></tr>'}</table></div>`},
+vendas(){const r=db.meds.filter(m=>!S.q||m.nome.toLowerCase().includes(S.q.toLowerCase())),tot=S.cart.reduce((a,i)=>a+i.q*medN(i.id).preco,0);
+return `<div class="hd"><h2>Registar venda</h2></div><div class="g2"><div class="cd"><h3>Medicamentos</h3><input id="q" placeholder="Pesquisar medicamento" value="${esc(S.q)}" oninput="S.q=this.value;render()" style="margin-bottom:8px"><table>${r.map(m=>`<tr><td>${esc(m.nome)}<br><small style="color:var(--mut)">${fmt(m.preco)} · ${m.qtd} un.</small></td><td style="text-align:right"><button class="sm" ${m.qtd<1||m.val<td()?'disabled':''} onclick="addC(${m.id})">Adicionar</button></td></tr>`).join('')||'<tr><td class="em">Medicamento não encontrado.</td></tr>'}</table></div>
+<div class="cd"><h3>Venda actual</h3>${S.cart.length?`<table><tr><th>Item</th><th>Qtd.</th><th>Subtotal</th><th></th></tr>${S.cart.map(i=>{const m=medN(i.id);return `<tr><td>${esc(m.nome)}</td><td><input type="number" min="1" value="${i.q}" onchange="setQ(${i.id},this.value)"></td><td>${fmt(i.q*m.preco)}</td><td><button class="sm bd2" onclick="setQ(${i.id},0)">Remover</button></td></tr>`}).join('')}</table><div class="tot">Total: ${fmt(tot)}</div><div class="bt"><button class="b2" onclick="cancelV()">Cancelar venda</button><button onclick="confV()">Confirmar venda</button></div>`:'<div class="em">Adicione medicamentos para iniciar a venda.</div>'}</div></div>`},
+compras(){const it=S.pit,tot=it.reduce((a,i)=>a+i.s,0);
+return `<div class="hd"><h2>Registar compra</h2></div><div class="cd"><div class="fl"><select id="ps" onchange="S.psup=this.value"><option value="">Seleccione o fornecedor</option>${db.sups.map(s=>`<option value="${s.id}" ${S.psup==s.id?'selected':''}>${esc(s.nome)}</option>`).join('')}</select></div>
+<div class="fl"><select id="pm">${db.meds.map(m=>`<option value="${m.id}">${esc(m.nome)}</option>`).join('')}</select><input id="pq" type="number" min="1" placeholder="Quantidade"><input id="pp" type="number" min="0" step="any" placeholder="Preço unitário (MT)"><button onclick="addP()">Adicionar item</button></div>
+${it.length?`<div class="tw"><table><tr><th>Medicamento</th><th>Qtd.</th><th>Preço unit.</th><th>Subtotal</th><th></th></tr>${it.map((i,x)=>`<tr><td>${esc(i.n)}</td><td>${i.q}</td><td>${fmt(i.p)}</td><td>${fmt(i.s)}</td><td><button class="sm bd2" onclick="S.pit.splice(${x},1);render()">Remover</button></td></tr>`).join('')}</table></div><div class="tot">Total: ${fmt(tot)}</div><div class="bt"><button onclick="confP()">Confirmar compra</button></div>`:'<div class="em">Nenhum item adicionado.</div>'}</div>`},
+relatorios(){const a=S.d1||'0000-00-00',b=S.d2||'9999-99-99',f=x=>x.d>=a&&x.d<=b;let h='',t='';
+if(S.rt=='vendas'){const r=db.sales.filter(f);t=r.filter(s=>s.est=='Confirmada').reduce((x,s)=>x+s.tot,0);h=`<tr><th>Nº</th><th>Data</th><th>Utilizador</th><th>Itens</th><th>Total</th><th>Estado</th></tr>`+r.map(s=>`<tr><td>${nVenda(s.id)}</td><td>${s.d}</td><td>${esc(s.u)}</td><td>${esc(s.it.map(i=>i.n+' ×'+i.q).join(', '))}</td><td>${fmt(s.tot)}</td><td>${s.est}</td></tr>`).join('')}
+else if(S.rt=='compras'){const r=db.purchases.filter(f);t=r.reduce((x,s)=>x+s.tot,0);h=`<tr><th>Nº</th><th>Data</th><th>Fornecedor</th><th>Itens</th><th>Total</th></tr>`+r.map(s=>`<tr><td>${nCompra(s.id)}</td><td>${s.d}</td><td>${esc((db.sups.find(x=>x.id==s.sup)||{}).nome)}</td><td>${esc(s.it.map(i=>i.n+' ×'+i.q).join(', '))}</td><td>${fmt(s.tot)}</td></tr>`).join('')}
+else{h=`<tr><th>Medicamento</th><th>Qtd.</th><th>Preço</th><th>Valor em stock</th><th>Estado</th></tr>`+db.meds.map(m=>`<tr><td>${esc(m.nome)}</td><td>${m.qtd}</td><td>${fmt(m.preco)}</td><td>${fmt(m.qtd*m.preco)}</td><td>${stB(m)}</td></tr>`).join('');t=db.meds.reduce((x,m)=>x+m.qtd*m.preco,0)}
+const n=h.split('<tr>').length-2;
+return `<div class="hd"><h2>Relatórios</h2></div><div class="fl"><select onchange="S.rt=this.value;render()">${[['vendas','Vendas'],['compras','Compras'],['stock','Situação do stock']].map(o=>`<option value="${o[0]}" ${S.rt==o[0]?'selected':''}>${o[1]}</option>`).join('')}</select>${S.rt!='stock'?`<input type="date" id="d1" value="${S.d1}" onchange="S.d1=this.value;render()" title="Data inicial"><input type="date" id="d2" value="${S.d2}" onchange="S.d2=this.value;render()" title="Data final">`:''}</div>
+<div class="tw"><table>${n>0?h:'<tr><td class="em">Não existem registos para o período seleccionado.</td></tr>'}</table></div><div class="tot">${S.rt=='stock'?'Valor total em stock':'Total'}: ${fmt(t)}</div>`},
+historico(){return `<div class="hd"><h2>Histórico de operações</h2></div><div class="tw"><table><tr><th>Data e hora</th><th>Utilizador</th><th>Operação</th></tr>${db.log.map(l=>`<tr><td>${esc(l.t)}</td><td>${esc(l.u)}</td><td>${esc(l.a)}</td></tr>`).join('')||'<tr><td class="em" colspan="3">Sem operações registadas.</td></tr>'}</table></div>`}};
+
+/* ---------- Vendas ---------- */
+function addC(id){const m=medN(id),i=S.cart.find(x=>x.id==id);if(i){if(i.q+1>m.qtd)return toast('Stock insuficiente. Disponível: '+m.qtd+' un.',1);i.q++}else S.cart.push({id,q:1});render()}
+function setQ(id,v){v=Math.floor(+v);const m=medN(id);if(!(v>0)){S.cart=S.cart.filter(x=>x.id!=id)}else if(v>m.qtd){toast('Stock insuficiente. Disponível: '+m.qtd+' un.',1);S.cart.find(x=>x.id==id).q=m.qtd}else S.cart.find(x=>x.id==id).q=v;render()}
+function cancelV(){const it=S.cart.map(i=>{const m=medN(i.id);return{id:m.id,n:m.nome,q:i.q,p:m.preco,s:i.q*m.preco}});const s={id:nid(db.sales),d:td(),u:S.user.user,it,tot:it.reduce((a,i)=>a+i.s,0),est:'Cancelada'};db.sales.push(s);lg('Venda cancelada '+nVenda(s.id));S.cart=[];save();render();toast('Venda cancelada e registada.')}
+function confV(){for(const i of S.cart){if(i.q>medN(i.id).qtd)return toast('Stock insuficiente para '+medN(i.id).nome+'.',1)}
+const it=S.cart.map(i=>{const m=medN(i.id);m.qtd-=i.q;return{id:m.id,n:m.nome,q:i.q,p:m.preco,s:i.q*m.preco}});
+const s={id:nid(db.sales),d:td(),u:S.user.user,it,tot:it.reduce((a,i)=>a+i.s,0),est:'Confirmada'};db.sales.push(s);lg('Venda confirmada '+nVenda(s.id)+' – '+fmt(s.tot));S.cart=[];save();render();recibo(s)}
+function recibo(s){$('#modal').innerHTML=`<div class="ov"><div class="md"><div class="rc"><h3>Farmácia Ka Menete</h3>Comprovativo de venda ${nVenda(s.id)}<br>Data: ${s.d} · Atendente: ${esc(s.u)}<table style="margin:8px 0"><tr><th>Item</th><th>Qtd.</th><th>Subtotal</th></tr>${s.it.map(i=>`<tr><td>${esc(i.n)}</td><td>${i.q}</td><td>${fmt(i.s)}</td></tr>`).join('')}</table><b>TOTAL: ${fmt(s.tot)}</b></div><div class="bt"><button class="b2" onclick="closeM()">Fechar</button><button onclick="window.print()">Imprimir</button></div></div></div>`}
+
+/* ---------- Compras ---------- */
+function addP(){const m=medN(+$('#pm').value),q=Math.floor(+$('#pq').value),p=+$('#pp').value;if(!m||!(q>0)||$('#pp').value===''||p<0)return toast('Indique medicamento, quantidade e preço válidos.',1);
+const i=S.pit.find(x=>x.id==m.id);if(i){i.q+=q;i.p=p;i.s=i.q*p}else S.pit.push({id:m.id,n:m.nome,q,p,s:q*p});render()}
+function confP(){if(!S.psup)return toast('Seleccione o fornecedor.',1);S.pit.forEach(i=>medN(i.id).qtd+=i.q);
+const c={id:nid(db.purchases),d:td(),u:S.user.user,sup:+S.psup,it:S.pit,tot:S.pit.reduce((a,i)=>a+i.s,0)};db.purchases.push(c);lg('Compra registada '+nCompra(c.id)+' – '+fmt(c.tot));S.pit=[];S.psup='';save();render();toast('Compra registada e stock actualizado.')}
+
+/* ---------- Estrutura, login e arranque ---------- */
+function login(){if(!db.users.length||S.reg)return regForm();return `<div class="lg"><div class="cd"><h1>Farmácia Ka Menete</h1><div style="color:var(--mut);margin-bottom:16px">Sistema de gestão</div><label>Utilizador<input id="lu" autocomplete="username" onkeydown="if(event.key=='Enter')doLogin()"></label><label style="display:block;margin-top:10px">Palavra-passe<input id="lp" type="password" autocomplete="current-password" onkeydown="if(event.key=='Enter')doLogin()"></label><div class="err" id="le"></div><button style="width:100%" onclick="doLogin()">Iniciar sessão</button><button class="b2" style="width:100%;margin-top:8px" onclick="S.reg=1;render()">Criar conta</button></div></div>`}
+function regForm(){const first=!db.users.length,L='style="display:block;margin-top:10px"';return `<div class="lg"><div class="cd"><h1>${first?'Configuração inicial':'Criar conta'}</h1><div style="color:var(--mut);margin-bottom:12px">${first?'Crie a conta do Administrador para começar a usar o sistema.':'Preencha os dados para criar a sua conta.'}</div><label>Nome completo<input id="rn"></label><label ${L}>Nome de utilizador<input id="ru" autocomplete="username"></label><label ${L}>Palavra-passe (mínimo 6 caracteres)<input id="rp" type="password" autocomplete="new-password"></label><label ${L}>Confirmar palavra-passe<input id="rc" type="password" autocomplete="new-password"></label>${first?'':`<label ${L}>Perfil<select id="rf"><option value="atendente">Atendente</option><option value="stock">Responsável pelo stock</option></select></label>`}<div class="err" id="le"></div><button style="width:100%" onclick="doReg()">${first?'Criar conta de administrador':'Criar conta'}</button>${first?'':'<button class="b2" style="width:100%;margin-top:8px" onclick="S.reg=0;render()">Voltar ao início de sessão</button>'}</div></div>`}
+function doReg(){const n=$('#rn').value.trim(),u=$('#ru').value.trim(),p=$('#rp').value,c=$('#rc').value,e=m=>$('#le').textContent=m;
+if(!n||!u||!p)return e('Preencha todos os campos.');if(p.length<6)return e('A palavra-passe deve ter pelo menos 6 caracteres.');if(p!=c)return e('As palavras-passe não coincidem.');if(db.users.some(x=>x.user.toLowerCase()==u.toLowerCase()))return e('Esse nome de utilizador já existe. Escolha outro.');
+const first=!db.users.length,f=$('#rf');db.users.push({id:nid(db.users),nome:n,user:u,pass:p,perfil:first?'admin':f.value,activo:'Sim'});S.reg=0;S.user=db.users[db.users.length-1];S.page='painel';lg(first?'Criou a conta de administrador':'Criou a conta (auto-registo)');save();render()}
+function doLogin(){const u=db.users.find(x=>x.user==$('#lu').value.trim()&&x.pass==$('#lp').value);
+if(!u||u.activo!='Sim'){$('#le').textContent=u?'Conta desactivada. Contacte o administrador.':'Utilizador ou palavra-passe incorrectos. Tente novamente.';return}
+S.user=u;S.page='painel';lg('Iniciou sessão');save();render()}
+function logout(){lg('Terminou sessão');save();S.user=null;S.cart=[];S.pit=[];render()}
+function go(p){S.page=p;S.q='';S.c='';S.low=false;render()}
+function shell(){const pg=PERM[S.user.perfil];if(!pg.includes(S.page))S.page='painel';
+return `<div class="sh"><aside><h1>Farmácia<br>Ka Menete</h1>${pg.map(p=>`<a tabindex="0" class="${p==S.page?'on':''}" onclick="go('${p}')" onkeydown="if(event.key=='Enter')go('${p}')">${NAV[p]}</a>`).join('')}<div class="us">${esc(S.user.nome)}<br><small>${ROLE[S.user.perfil]}</small><br><a onclick="logout()" style="padding:4px 0">Terminar sessão</a></div></aside><main>${P[S.page]()}</main></div>`}
+function render(){const a=document.activeElement,id=a&&a.id,ss=a&&a.selectionStart;$('#app').innerHTML=S.user?shell():login();
+if(id){const n=document.getElementById(id);if(n&&n.tagName=='INPUT'&&n.type=='text'){n.focus();try{n.setSelectionRange(ss,ss)}catch(e){}}}}
+render();
+</script>
+</body>
+</html>
